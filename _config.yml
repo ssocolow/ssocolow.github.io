@@ -69,32 +69,29 @@ plugins:
   - jekyll-seo-tag
 
 author:
-  name: "Jake Tae"
+  name: "Simon Socolow"
   avatar: "/assets/images/Photo.jpg"
-  bio: "An aspiring mathematician and data scientist. Fan of tech, soccer, guitar, and food."
-  location: "Seoul, KOR"
+  bio: " Interested in aligning AI and empowering individuals with cryptosystems"
+  location: "Bangor, ME USA"
   links:
     - label: "Email"
       icon: "fas fa-fw fa-envelope"
-      url: "mailto:jake.tae@yale.edu"
+      url: "mailto:sms12@williams.edu"
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
-      url: "https://github.com/jaketae"
+      url: "https://github.com/ssocolow"
     - label: "LinkedIn"
       icon: "fab fa-fw fa-linkedin"
-      url: "https://www.linkedin.com/in/jaketae/"
-    - label: "Twitter"
-      icon: "fab fa-fw fa-twitter"
-      url: "https://twitter.com/jaesungtae"
+      url: "https://www.linkedin.com/in/simon-socolow/"
 
 footer:
   links:
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
-      url: "https://github.com/jaketae"
+      url: "https://github.com/ssocolow"
     - label: "LinkedIn"
       icon: "fab fa-fw fa-linkedin"
-      url: "https://www.linkedin.com/in/jaketae/"
+      url: "https://www.linkedin.com/in/simon-socolow/"
 
 # Collections
 collections:
