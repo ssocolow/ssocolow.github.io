@@ -5,9 +5,12 @@ title: "Hello there!"
 author_profile: true
 ---
 
-:wave: Welcome to my blog! My name is Jake (Jaesung) Tae, and I'm a senior at Yale University working towards a Bachelors of Science in Computer Science and Mathematics.
+:wave: Welcome to my blog! My name is Simon Socolow, and I'm a junior at Williams College (currently studying abroad at Exeter College at Oxford) working towards a Bachelor's of Arts in Computer Science.
 
-My interests are diverse, but I am particularly fascinated by text-to-speech, NLP, generative modeling, and recommendation systems. While I'm a skeptic who believes that artificial intelligence will not achieve human-level understanding of emotion or empathy, I strongly believe that the development and application of deep learning models will transform the world for the better. I'll also stick in here the fact that I'm a proud Pythonista and a firm advocate of open sourcing ([GitHub](https://github.com/jaketae/)).
+My interests are diverse, but I'm passionate about empowering people - whether through tech like AI or cryptocurrencies or teaching or connecting people. I'm also a proud supporter of the spirit of open source ([GitHub](https://github.com/ssocolow/)).
+
+
+but I am particularly fascinated by text-to-speech, NLP, generative modeling, and recommendation systems. While I'm a skeptic who believes that artificial intelligence will not achieve human-level understanding of emotion or empathy, I strongly believe that the development and application of deep learning models will transform the world for the better. I'll also stick in here the fact that I'm a proud Pythonista and a firm advocate of open sourcing ([GitHub](https://github.com/jaketae/)).
 
 My most transformative event in life was the time in the Korean military, where I worked as a translator at the 142nd Military Policy Company, 8th U.S. Army. My primary responsibilities included responding to emergency calls, maintaining real-time communication with patrols and the Korean National Police, and overseeing law enforcement at U.S. Army Garrison-Yongsan, Seoul. I am proud to have played my part as a member of the [Korean Augmentation to the U.S. Army](https://en.wikipedia.org/wiki/Korean_Augmentation_To_the_United_States_Army).
 

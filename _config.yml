@@ -22,13 +22,13 @@ title: "Simon Socolow"
 subtitle: ""
 email: sms12@williams.edu
 description: >- # this means to ignore newlines until "baseurl:"
-  Hey there! My name is Jake, and I'm a lskdjf.
+  Hey there! I'm Simon, welcome to my site!
 words_per_minute: 200
 search: true
 search_full_content: true
 
-# twitter_username: username
-github_username: jaketae
+twitter_username: simonsocolow
+github_username: ssocolow
 
 # Build settings
 markdown: kramdown
