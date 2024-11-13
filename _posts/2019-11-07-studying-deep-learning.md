@@ -1,5 +1,5 @@
 ---
-title: "A Self-Created Curriculum"
+title: "Why the Japanese Love Televisoin"
 date: 2019-11-07
 header:
   image: /assets/images/hundred-page.png
@@ -9,7 +9,7 @@ tags:
   - update
 ---
 
-So here goes my first post!
+So here goes my first post! This is a speech I made for the Princeton in Ishikawa summer language program.
 
 # Motivation
 
