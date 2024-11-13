@@ -70,7 +70,7 @@ plugins:
 
 author:
   name: "Simon Socolow"
-  avatar: "/assets/images/Photo.jpg"
+  avatar: "/assets/images/headshot.jpg"
   bio: " Interested in aligning AI and empowering individuals with cryptosystems"
   location: "Bangor, ME USA"
   links:
