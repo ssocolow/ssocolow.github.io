@@ -4,7 +4,7 @@ date: 2024-11-18
 categories:
   - recommendations
 tags:
-  - otherpeople
+  - resources
 ---
 
 # My Blog/Interesting Ideas Recommendations
