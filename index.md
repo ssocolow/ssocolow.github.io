@@ -15,4 +15,4 @@ In my free time I like to exercise - preferably with friends and outdoors. In hi
 
 I'm not sure where my life will take me, and I'm a bit stressed about that. Right now I think I want to build helpful technology and work with a great team.
 
-This blog is whatever I want it to be - just like my [youtube channel](https://www.youtube.com/channel/UCDJA92YqaUXo_2dlJkkLp4g). My writing will contain seemingly random ideas, projects, people, cultures, sports, anything. Enjoy!
+This blog is whatever I want it to be - just like my [youtube channel](https://www.youtube.com/channel/UCDJA92YqaUXo_2dlJkkLp4g). Thanks to [Jake Tae](https://jaketae.github.io/) for the design! My writing will contain seemingly random ideas, projects, people, cultures, sports, anything. Enjoy!
