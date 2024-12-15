@@ -9,7 +9,7 @@ author_profile: true
 
 My interests are diverse, but I'm passionate about empowering people - whether through tech like AI or cryptocurrencies or teaching or connecting people. I'm also a proud supporter of the open source spirit ([GitHub](https://github.com/ssocolow/)).
 
-I'm fortunate that by living in the US, Australia, Japan, and the UK, my life has exposed me to different cultures, ideas, and people. I hope to shed some light on how these cultures are similar but different in this blog.
+I'm fortunate that my life has exposed me to many kinds of cultures, ideas, and people. I hope to shed some light on how cultures are similar but different in this blog.
 
 In my free time I like to exercise - preferably with friends and outdoors. In high school I ran cross-country and swam; in college (at Williams and at Oxford) I'm rowing. I also like to stretch and improve my mobility. My interests in Japan have led me to live in Ishikawa-ken ([PII](https://pii.princeton.edu/)) and Tokyo (internship), as well as teach a seminar on the Philosophy of AI to Japanese high schools students ([KSS](https://atelieryume.co/projects/kss/)) and be a delegate to the 76th Japan-America Student Conference ([JASC](https://iscdc.org/jasc/)).
 

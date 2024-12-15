@@ -6,6 +6,7 @@ categories:
 tags:
   - info
   - study
+mathjax: true
 ---
 
 # Group Theory
