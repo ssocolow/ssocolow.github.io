@@ -17,14 +17,14 @@ I learned group theory from Misha for Michaelmas term and his last assignment wa
 Definition of a Group: Let $G$ be a set and $*$ be a binary operation. Then
 $(G, *)$ is a group if:
 
--   $*$ is a associative: so if
+-   $ * $ is a associative: so if
     $g_1,g_2,g_3 \in G, g_1*(g_2*g_3) = (g_1 * g_2) * g_3$
 
--   G contains an identity element (which I will denote as $e$): there
-    is $e \in G$ where for any $g \in G$, $g*e=e*g=g$
+-   $G$ contains an identity element (which I will denote as $e$): there
+    is $e \in G$ where for any $g \in G$, $g * e=e * g=g$
 
 -   every element of G has an inverse: if $g \in G$, there exists
-    $g^{-1} \in G$ where $g*g^{-1}=g^{-1}*g=e$
+    $g^{-1} \in G$ where $g * g^{-1}=g^{-1} * g=e$
 
 -   G is closed under \*: for any $g_1, g_2 \in G, g_1*g_2 \in G$
 
