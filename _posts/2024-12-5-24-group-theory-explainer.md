@@ -104,7 +104,7 @@ Quotient groups can be really confusing. I think that's because I had a
 hard time visualizing them and how they work. To start, let $G$ be a
 group and $H$ be a subgroup of $G$. $G/H$ is the set of (typically left)
 [cosets](#https://en.wikipedia.org/wiki/Coset) of $H$ in $G$. So,
-G/H = \{gH | \forall g\in G\}$. Here, $gH$ means take the element
+$G/H = \{gH | \forall g\in G\}$. Here, $gH$ means take the element
 $g \in G$ and make a set containing the result of the group action of
 $g$ with every element of $H$. There might be some $g_1,g_2 \in G$ where
 $g_1H=g_2H$. You can think of the quotient $G/H$ as "modding out\" from
