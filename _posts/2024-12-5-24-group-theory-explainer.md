@@ -14,10 +14,10 @@ I learned group theory from Misha for Michaelmas term and his last assignment wa
 
 # Groups
 
-Definition of a Group: Let G be a set and \* be a binary operation. Then
-(G, \*) is a group if:
+Definition of a Group: Let $G$ be a set and $*$ be a binary operation. Then
+$(G, *)$ is a group if:
 
--   \* is a associative: so if
+-   $*$ is a associative: so if
     $g_1,g_2,g_3 \in G, g_1*(g_2*g_3) = (g_1 * g_2) * g_3$
 
 -   G contains an identity element (which I will denote as $e$): there
