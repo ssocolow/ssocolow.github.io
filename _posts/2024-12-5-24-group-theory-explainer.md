@@ -14,22 +14,22 @@ I learned group theory from Misha for Michaelmas term and his last assignment wa
 
 # Groups
 
-Definition of a Group: Let $G$ be a set and $*$ be a binary operation. Then
-$(G, *)$ is a group if:
+Definition of a Group: Let $G$ be a set and $  *  $ be a binary operation. Then
+$(G,   *  )$ is a group if:
 
--   $ * $ is a associative: so if
-    $g_1,g_2,g_3 \in G, g_1*(g_2*g_3) = (g_1 * g_2) * g_3$
+-   $  *  $ is a associative: so if
+    $g_1,g_2,g_3 \in G, g_1 * (g_2 * g_3) = (g_1  *  g_2)  *  g_3$
 
 -   $G$ contains an identity element (which I will denote as $e$): there
-    is $e \in G$ where for any $g \in G$, $g * e=e * g=g$
+    is $e \in G$ where for any $g \in G$, $g  *  e=e  *  g=g$
 
 -   every element of G has an inverse: if $g \in G$, there exists
-    $g^{-1} \in G$ where $g * g^{-1}=g^{-1} * g=e$
+    $g^{-1} \in G$ where $g  *  g^{-1}=g^{-1}  *  g=e$
 
--   G is closed under \*: for any $g_1, g_2 \in G, g_1*g_2 \in G$
+-   G is closed under \ * : for any $g_1, g_2 \in G, g_1 * g_2 \in G$
 
 If $G$ is finite, we write $|G|$ for the number of elements in $G$. Note
-that people usually write $g_1g_2$ to mean $g_1*g_2$.
+that people usually write $g_1g_2$ to mean $g_1 * g_2$.
 
 ## Examples
 
@@ -48,7 +48,7 @@ it - seeing how they interact makes it easier to reason about them.
 ## Homomorphism
 
 A map of groups $\phi: (G_1, \ast) \to (G_2, \circ)$ is called a
-*homomorphism* if it preserves the group operation:
+ *homomorphism*  if it preserves the group operation:
 $$\phi(g \ast h) = \phi(g) \circ \phi(h) \quad \text{for all } g, h \in G_1.$$
 
 I found concrete examples of homomorphisms hard to find so here is one:
@@ -67,8 +67,8 @@ means both injective (one-to-one) and surjective (onto).
 
 ## Conjugation
 
-Two elements $h,k \in G$ are *conjugate* in $G$ if there exists $g\in G$
-such that $h=g^{-1}kg$. Conjugation of an element $k$ *by* an element
+Two elements $h,k \in G$ are  *conjugate*  in $G$ if there exists $g\in G$
+such that $h=g^{-1}kg$. Conjugation of an element $k$  * by *  an element
 $g$ gives $g^{-1}kg$. If $b=g^{-1}kg$ then $b$ and $g$ are in the same
 conjugacy class. I found conjugacy classes hard to wrap my head around.
 Conjugacy classes partition a group, and we can see this with
@@ -81,7 +81,7 @@ twice so also end up with a rotation.
 # Subgroups
 
 Basically, a subgroup is a group that exists inside a group. Definition:
-$(H,*)$ is a subgroup of $(G,*)$ if $H \subseteq G$ and $(H,*)$
+$(H, * )$ is a subgroup of $(G, * )$ if $H \subseteq G$ and $(H, * )$
 satisfies the properties of a group. We write $H \leq G$.
 
 ## Lagrange's Theorem
@@ -110,8 +110,8 @@ $g$ with every element of $H$. There might be some $g_1,g_2 \in G$ where
 $g_1H=g_2H$. You can think of the quotient $G/H$ as "modding out\" from
 $G$ all the elements $g_1,g_2,...$ where $g_1H=g_2H=...$ so that you are
 left with one element in $G/H$ that represents $g_1,g_2,...$. Example
-below. If $N$ is a *normal* subgroup in $G$, then $G/N$ is a group with
-group operation $g_1N * g_2N = (g_1g_2)N$.
+below. If $N$ is a  * normal *  subgroup in $G$, then $G/N$ is a group with
+group operation $g_1N  *  g_2N = (g_1g_2)N$.
 
 ## Example
 
@@ -147,7 +147,7 @@ Definition: For any set $S$, the free group $F(S)$ are all the "reduced
 words\" that can be created from the "alphabet\" $S$ (the alphabet
 includes inverse characters). So if $S=\{a,b\}$ then $aa$ is a word,
 $ab$ is a word, $ba$ is a word, and $a^{-1}b$ is also a word. The group
-operation is concatenation, so $ab*ba=abba$. A word is "reduced\" if no
+operation is concatenation, so $ab * ba=abba$. A word is "reduced\" if no
 element is next to its inverse, so $aa^{-1}bab$ reduces to $bab$.
 
 Having the background of computer science made me feel comfortable with
@@ -180,7 +180,7 @@ from a different perspective.
 A group can contain nested subgroups, and one of the biggest questions
 in group theory is how we can analyze a group by breaking it into
 smaller pieces to see the structure of the bigger group. A finite group
-$G$ has a *composition series*
+$G$ has a  *composition series* 
 $\{e\}\triangleleft G_1 \triangleleft ... \triangleleft G_n=G$ where
 $G_1,...,G_n$ are subgroups of $G$. The Jordan-Holder Theorem (JHT) is
 very similar to the fundamental theorem of arithmetic (the
@@ -219,7 +219,7 @@ and forms a new group, but the elements from the two groups don't
 interact. For example,
 $\mathbb{Z}\times\mathbb{Z}=\{(a,b):a,b\in\mathbb{Z}\}$. So the direct
 product of the integers with itself gives the group of points on the
-Cartesian (integer) plane. And $(a,b)*(c,d)=(a*c,b*d)$. Semi-direct
+Cartesian (integer) plane. And $(a,b) * (c,d)=(a * c,b * d)$. Semi-direct
 products are more interesting because they let elements in both groups
 interact. To define a semi-direct product, it will be helpful to know
 what an automorphism is. An automorphism is an isomorphism from a group
@@ -235,12 +235,12 @@ automorphism of N, so it will relabel $n_2$ to be another (or the same)
 element in $N$. I was confused whether the automorphisms of $N$ was the
 same as conjugation. I would like to remember that statements like the
 one I just made are ambiguous because "conjugation\" is not an action -
-"conjugation *by* an element is an action. Similarly, saying a group $N$
+"conjugation  * by *  an element is an action. Similarly, saying a group $N$
 is normal doesn't mean anything - the property of being normal requires
-a group $G$ to be normal *in*. Big people also get confused with these
+a group $G$ to be normal  * in * . Big people also get confused with these
 specifics sometimes. In the case of automorphisms of a group $N$, there
 are inner automorphisms of $N$ (which are conjugations of elements of
-$N$ *by* elements of $N$) and outer automorphisms (conjugation of
+$N$  * by *  elements of $N$) and outer automorphisms (conjugation of
 elements of $N$ by elements outside the subgroup $N$). For the
 homomorphism $\phi:H\xrightarrow{}Aut(N)$, I think
 $\phi \text{ sends } h\xrightarrow{}(n\xrightarrow{}hnh^{-1})$.
@@ -251,7 +251,7 @@ Given a group with a certain number of elements, what do we know about
 the subgroups that exist within this group? Lagrange's Theorem tells us
 the order of a subgroup divides the order of the group. Ok, but wouldn't
 it be nice to know
-*[which](#https://math.stackexchange.com/questions/4415922/why-are-sylow-theorems-and-sylow-subgroups-significant)*
+ *[which](#https://math.stackexchange.com/questions/4415922/why-are-sylow-theorems-and-sylow-subgroups-significant)* 
 divisors of the group correspond to subgroups? To answer this question,
 Sylow's Theorems are useful. If $G$ is a group with order $p^am$ where
 $p$ is prime and $p$ doesn't divide $m$, we call a subgroup $H$ of $G$ a
