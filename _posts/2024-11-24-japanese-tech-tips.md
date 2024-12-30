@@ -2,7 +2,7 @@
 title: "Tech Tips For Learning Japanese"
 date: 2024-11-18
 categories:
-  - reccomendations
+  - recommendations
 tags:
   - japanese
   - info
