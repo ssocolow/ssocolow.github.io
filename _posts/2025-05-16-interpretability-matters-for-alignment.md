@@ -6,6 +6,7 @@ categories:
 tags:
   - essays
   - study
+  - mechinterp
 ---
 > This essay is my third essay for my Ethics of AI philosophy tutorial (under the tutelage of Benjamin Lang). In the essay, I take a crack at arguing for interpretability. Our tutorial discussion involved philosophical topics like under what conditions is someone responsible for their actions (control, causal, and epistemic), moral luck, the theory of extended minds, how questions are judgements, how nudges may individually be OK but in aggregate problematic, how Koralus believes that all reasoning is questions and answers. I showed Ben tools like [goodfire's ember platform](https://www.goodfire.ai/blog/announcing-goodfire-ember) (where we tried to create a McDonald's Llama) and [neuronpedia](https://www.neuronpedia.org/gemma-scope#steer), and we discussed how decentralized truth seeking (DTS) might be hard if the model follows the average of the field, and provides textbook questions and answers, instead of having a personality and certain perspectives like a real human peer would. We also discussed how mechanistic interpretability for LLMs might be applied to other types of models like discriminative ones and how trusted execution environments or proofs of computation could provide cryptographic confidence to a user that would allow them to engage in DTS without requiring "ownership" of the model. Super engaging, topical, and thought-provoking discussion.
 
