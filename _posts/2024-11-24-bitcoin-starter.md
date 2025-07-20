@@ -2,7 +2,7 @@
 title: "Bitcoin Starter"
 date: 2024-11-18
 categories:
-  - crypto
+  - cryptography
 tags:
   - bitcoin
   - info
