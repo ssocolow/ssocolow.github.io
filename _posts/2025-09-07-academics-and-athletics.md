@@ -27,3 +27,12 @@ Not too long ago, I chatted over dinner with a friend about performance enhancin
 Just like being judicious with stimulants, knowing how certain foods will affect your body and energy levels is also a superpower. We talked about [glycemic index (GI)](https://en.wikipedia.org/wiki/Glycemic_index) and how he avoids carbs at dinnertime because they have a high GI.  
 
 All these ideas center around one meta-idea: use the right tool for the job. And the winds of evidence point us towards the realization that exercise is a tool, a multifaceted tool, that is useful in doing the job of being a college student.
+
+## Diminishing returns of exercise
+While there is strong evidence that *some* exercise is important and beneficial, there must be a point beyond which exercise is harmful. Imagine someone working out eight hours a day - not much time to do other things. Unfortunately, I agree with my uncle who said collegiate athletics' "competitiveness leads to a constant escalation of the amount of time spent on workouts. We're not very good at controlling that escalation and need to be more conscious of that."  
+
+In game theory terms, I think this represents the Prisoner's Dilemma. At Williams, a D3 NESCAC school, we have an emphasis on being a '**student**-athlete' where the *student comes first*. Meaning that academics should always have priority over athletics. However, I don't think this is internalized enough by some of my teammates and possibly coaches. This is my attempt at representing the situation (where Athlete-Student means athletics is being prioritized over academics):
+
+![athletics pd](/assets/images/athleticspd.png)
+
+So if everyone had the same *student*-athlete time commitment for athletics, the student-athlete vision would be possible. And there are NESCAC rules for this like no mandatory practices out of season. However, in practice (haha), there are de-facto mandatory practices during the offseason. Everyone who wants to win has an incentive to push for more time practicing - quality time spent doing sport seems to be well-correlated with performance in sport. I think to solve this, coaches need an incentive for academic performance to balance the tug-of-war that currently appears one-sided.
