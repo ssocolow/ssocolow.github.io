@@ -1,0 +1,565 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.19.3 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang=" en" class="no-js">
+
+<head>
+  <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>Interpretability Matters For Alignment - Simon Socolow</title>
+<meta name="description" content="This essay is my third essay for my Ethics of AI philosophy tutorial (under the tutelage of Benjamin Lang). In the essay, I take a crack at arguing for interpretability. Our tutorial discussion involved philosophical topics like under what conditions is someone responsible for their actions (control, causal, and epistemic), moral luck, the theory of extended minds, how questions are judgements, how nudges may individually be OK but in aggregate problematic, how Koralus believes that all reasoning is questions and answers. I showed Ben tools like goodfire’s ember platform (where we tried to create a McDonald’s Llama) and neuronpedia, and we discussed how decentralized truth seeking (DTS) might be hard if the model follows the average of the field, and provides textbook questions and answers, instead of having a personality and certain perspectives like a real human peer would. We also discussed how mechanistic interpretability for LLMs might be applied to other types of models like discriminative ones and how trusted execution environments or proofs of computation could provide cryptographic confidence to a user that would allow them to engage in DTS without requiring “ownership” of the model. Super engaging, topical, and thought-provoking discussion.">
+
+
+  <meta name="author" content="Simon Socolow">
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="Simon Socolow">
+<meta property="og:title" content="Interpretability Matters For Alignment">
+<meta property="og:url" content="http://localhost:4000/philosophy/interpretability-matters-for-alignment/">
+
+
+  <meta property="og:description" content="This essay is my third essay for my Ethics of AI philosophy tutorial (under the tutelage of Benjamin Lang). In the essay, I take a crack at arguing for interpretability. Our tutorial discussion involved philosophical topics like under what conditions is someone responsible for their actions (control, causal, and epistemic), moral luck, the theory of extended minds, how questions are judgements, how nudges may individually be OK but in aggregate problematic, how Koralus believes that all reasoning is questions and answers. I showed Ben tools like goodfire’s ember platform (where we tried to create a McDonald’s Llama) and neuronpedia, and we discussed how decentralized truth seeking (DTS) might be hard if the model follows the average of the field, and provides textbook questions and answers, instead of having a personality and certain perspectives like a real human peer would. We also discussed how mechanistic interpretability for LLMs might be applied to other types of models like discriminative ones and how trusted execution environments or proofs of computation could provide cryptographic confidence to a user that would allow them to engage in DTS without requiring “ownership” of the model. Super engaging, topical, and thought-provoking discussion.">
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2025-05-16T00:00:00-04:00">
+
+
+
+
+
+
+<link rel="canonical" href="http://localhost:4000/philosophy/interpretability-matters-for-alignment/">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": null,
+      "url": "http://localhost:4000/"
+    
+  }
+</script>
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+<link href="/feed.xml"
+  type="application/atom+xml" rel="alternate" title="Simon Socolow Feed">
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css" id="theme_source">
+
+<link rel="stylesheet alternate" href="/assets/css/theme2.css" id="theme_source_2">
+<script>
+  let theme = sessionStorage.getItem('theme');
+  if (theme === "dark") {
+    sessionStorage.setItem('theme', 'dark');
+    node1 = document.getElementById('theme_source');
+    node2 = document.getElementById('theme_source_2');
+    node1.setAttribute('rel', 'stylesheet alternate');
+    node2.setAttribute('rel', 'stylesheet');
+  }
+  else {
+    sessionStorage.setItem('theme', 'light');
+  }
+</script>
+
+<!--[if IE]>
+  <style>
+    /* old IE unsupported flexbox fixes */
+    .greedy-nav .site-title {
+      padding-right: 3em;
+    }
+    .greedy-nav button {
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 100%;
+    }
+  </style>
+<![endif]-->
+
+
+  <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+  
+</head>
+
+<body
+  class="layout--single">
+  <nav class="skip-links">
+  <h2 class="screen-reader-text">Skip links</h2>
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+  <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+
+  
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+        <a class="site-title" href="/">
+          Simon Socolow
+          <span class="site-subtitle"></span>
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+            <a href="/posts/" >Posts</a>
+          </li><li class="masthead__menu-item">
+            <a href="/resume/" >Resume</a>
+          </li><li class="masthead__menu-item">
+            <a href="/categories/" >Categories</a>
+          </li><li class="masthead__menu-item">
+            <a href="/tags/" >Tags</a>
+          </li></ul>
+        
+        <i class="fas fa-fw fa-adjust" aria-hidden="true"
+          onclick="node1=document.getElementById('theme_source');node2=document.getElementById('theme_source_2');if(node1.getAttribute('rel')=='stylesheet'){node1.setAttribute('rel', 'stylesheet alternate'); node2.setAttribute('rel', 'stylesheet');sessionStorage.setItem('theme', 'dark');}else{node2.setAttribute('rel', 'stylesheet alternate'); node1.setAttribute('rel', 'stylesheet');sessionStorage.setItem('theme', 'light');} return false;"></i>
+        
+        
+        <button class="search__toggle" type="button">
+          <span class="visually-hidden">Toggle search</span>
+          <svg class="icon" width="16" height="16" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15.99 16">
+            <path
+              d="M15.5,13.12L13.19,10.8a1.69,1.69,0,0,0-1.28-.55l-0.06-.06A6.5,6.5,0,0,0,5.77,0,6.5,6.5,0,0,0,2.46,11.59a6.47,6.47,0,0,0,7.74.26l0.05,0.05a1.65,1.65,0,0,0,.5,1.24l2.38,2.38A1.68,1.68,0,0,0,15.5,13.12ZM6.4,2A4.41,4.41,0,1,1,2,6.4,4.43,4.43,0,0,1,6.4,2Z"
+              transform="translate(-.01)"></path>
+          </svg>
+        </button>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+  <div class="initial-content">
+    
+
+
+
+<div id="main" role="main">
+  
+
+
+  <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="Interpretability Matters For Alignment">
+    <meta itemprop="description" content="  This essay is my third essay for my Ethics of AI philosophy tutorial (under the tutelage of Benjamin Lang). In the essay, I take a crack at arguing for interpretability. Our tutorial discussion involved philosophical topics like under what conditions is someone responsible for their actions (control, causal, and epistemic), moral luck, the theory of extended minds, how questions are judgements, how nudges may individually be OK but in aggregate problematic, how Koralus believes that all reasoning is questions and answers. I showed Ben tools like goodfire’s ember platform (where we tried to create a McDonald’s Llama) and neuronpedia, and we discussed how decentralized truth seeking (DTS) might be hard if the model follows the average of the field, and provides textbook questions and answers, instead of having a personality and certain perspectives like a real human peer would. We also discussed how mechanistic interpretability for LLMs might be applied to other types of models like discriminative ones and how trusted execution environments or proofs of computation could provide cryptographic confidence to a user that would allow them to engage in DTS without requiring “ownership” of the model. Super engaging, topical, and thought-provoking discussion.">
+    <meta itemprop="datePublished" content="2025-05-16T00:00:00-04:00">
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title" itemprop="headline">Interpretability Matters For Alignment
+</h1>
+          
+            <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+  12 minute read
+
+</p>
+          
+        </header>
+      
+
+      <section class="page__content" itemprop="text">
+        
+        <blockquote>
+  <p>This essay is my third essay for my Ethics of AI philosophy tutorial (under the tutelage of Benjamin Lang). In the essay, I take a crack at arguing for interpretability. Our tutorial discussion involved philosophical topics like under what conditions is someone responsible for their actions (control, causal, and epistemic), moral luck, the theory of extended minds, how questions are judgements, how nudges may individually be OK but in aggregate problematic, how Koralus believes that all reasoning is questions and answers. I showed Ben tools like <a href="https://www.goodfire.ai/blog/announcing-goodfire-ember">goodfire’s ember platform</a> (where we tried to create a McDonald’s Llama) and <a href="https://www.neuronpedia.org/gemma-scope#steer">neuronpedia</a>, and we discussed how decentralized truth seeking (DTS) might be hard if the model follows the average of the field, and provides textbook questions and answers, instead of having a personality and certain perspectives like a real human peer would. We also discussed how mechanistic interpretability for LLMs might be applied to other types of models like discriminative ones and how trusted execution environments or proofs of computation could provide cryptographic confidence to a user that would allow them to engage in DTS without requiring “ownership” of the model. Super engaging, topical, and thought-provoking discussion.</p>
+</blockquote>
+
+<p>AI is becoming increasingly integrated with modern life. We ask ChatGPT for help in our professional and personal lives, scan Google’s AI Overviews for a quick answer, and rely on ML algorithms for medical treatment. Alignment, the process by which we steer systems toward intended goals, is crucial in developing tools that benefit their users and humanity as a whole. Tools to increase interpretability, the extent to which the behavior of a system is understandable and transparent, are important for use on the journey to align AI models. Interpretability matters for alignment because it can ensure we are “asking the right questions”, enable us to “steer” model behavior reliably, and enhance human judgement rather than undermine it.</p>
+
+<h2 id="asking-the-right-question">Asking the Right Question</h2>
+<p>In the Hitchhiker’s Guide to the Galaxy, the supercomputer Deep Thought calculates “42” as the Answer to the Ultimate Question of Life, The Universe, and Everything. But an answer isn’t useful if we don’t understand the question that it answers. This general issue emerges in real-world applications of machine learning systems, and is an area where interpretability can help. For example, an AI system used for predicting hospital outcomes looked “at the type of X-ray equipment rather than the medical content of the X-ray because the type of equipment actually provided information” (Afnan et al. 2021, 5). Using interpretability techniques, researchers were able to understand what information the model was using for its prediction and clearly see the misalignment - the hospital outcome predicted was not based on the patient’s condition. In general, a “plague of confounding haunts a vast number of datasets, and particularly medical data sets” (Rudin 2019, 209).</p>
+
+<p>The process of using interpretability techniques to discover issues with datasets is well-established: when creating an interpretable model, “one invariably realizes that the data are problematic and require troubleshooting, which slows down deployment but leads to a better model” (Rudin et al. 2021, 4). During one large-scale effort to predict electrical grid failures, the ability to interpret the data 
+“led to significant improvements in performance” (Rudin 2019, 207). Another example of a real-world issue that stemmed from non-interpretable, black-box models is when individuals were subjected to years of extra prison time due to typographical errors in model inputs (Ibid., 2). Interpretability allows us to ask the meta question: “are we asking the right questions?” and gather evidence which may or may not support the conclusion that the current model is working as intended. Then, based on that feedback, we can work to minimize the difference between our intended model and our actual model.</p>
+
+<h2 id="steering-toward-an-aligned-future">Steering Toward an Aligned Future</h2>
+<p>Recent advances in mechanistic interpretability, the nascent field that aims to systematically open the “black box” of an AI model to understand all its pieces, have led Dario Amodei (the CEO of a leading AI research company named Anthropic) to become increasingly focused on the “tantalizing possibility … that we could succeed at interpretability … before models reach an overwhelming level of power” (Amodei 2025). He is worried that AI systems with capability equivalent to a “country of geniuses in a datacenter” might emerge as soon as 2026 or 2027 and considers it “basically unacceptable for humanity to be totally ignorant of how they work” given how much autonomy they will have (Ibid.).</p>
+
+<p>Advances like sparse autoencoders (SAEs), which allow researchers to extract meaningful “features” from a model’s otherwise unintelligible parameters, and the discovery of circuits, groups of features that show the steps in a model’s thinking, have enabled “brain scanning” of large language models (LLMs) (Amodei 2025). The result of this virtual mind reading is that we can interpret what thoughts and features the model is using when constructing its responses. And we can go a step further and conduct virtual brain surgery on the model to change its behavior in ways we can control - this is called “steering”. Steering has the potential to “greatly improve our ability to set bounds on the range of possible errors” (Ibid.). Therefore, steering has the potential to enable LLMs to operate reliably in high-stakes environments where a small number of mistakes could be very harmful. Reliability is vastly important for alignment - a tool is most useful when it works consistently.</p>
+
+<p>Another area where mechanistic interpretability techniques have huge potential in aligning AI systems is in detecting misalignment. Anthropic recently ran an experiment where a “‘red team’ deliberately introduced an alignment issue into a model (say, a tendency for the model to exploit a loophole in a task) and gave various ‘blue teams’ the task of figuring out what was wrong with it” (Amodei 2025). Three out of the four teams successfully uncovered the model’s hidden objective using techniques including “interpretability with sparse autoencoders (SAEs), behavioral attacks, and training data analysis” (Marks 2025, 1). In addition, not only can interpretability help reveal purposefully hidden objectives, but any misalignment that might “emerge” naturally as well. Amodei hopes that interpretability will enable a comprehensive “brain scan” of a model that has a “high probability of identifying a wide range of issues including tendencies to lie or deceive, power-seeking, flaws in jailbreaks, cognitive strengths and weaknesses of the model as a whole, and much more” (Amodei 2025). He goes on to say that interpretability can function as the “test set” for model alignment - an independent evaluation of alignment after the model is produced and ready for use.</p>
+
+<p>Another positive consequence of powerful interpretability techniques could be the contraction of the “responsibility gap” - where neither the manufacturer nor the operator of an autonomous system can be held morally responsible or liable for its actions. This gap emerges because “nobody has enough control over the machine’s actions to be able to assume the responsibility for them” (Matthias 2004, 177). Interpretability enables more control over the system, but a different version of control than programmers had over machines in the past. This new “soft control” differs from the old “hard control” by operating indirectly, at a high level, and non-deterministically instead of directly, at a low-level, and deterministically. Therefore, in the hypothetical case of a language model inside a stuffed animal convincing a child to commit suicide, the availability of powerful interpretability techniques could be used to return the responsibility of providing a reliably safe product back to the manufacturer. The contraction of the responsibility gap is in society’s best interests, so it represents yet another way in which interpretability could aid alignment.</p>
+
+<p>“Powerful AI will shape humanity’s destiny, and we deserve to understand our own creations before they radically transform our economy, our lives, and our future” (Amodei 2025). Mechanistic interpretability is our most promising tool to control powerful AI systems - and therefore influence our future.</p>
+
+<h2 id="transparency-and-ownership">Transparency and Ownership</h2>
+<p>Technology is rapidly advancing the complexity of life’s decisions. Therefore, individuals will either struggle to navigate these challenges on their own (losing agency) or will increasingly rely on AI agents to make decisions for them (losing autonomy). Philipp Koralus argues that this dilemma can be addressed by constructing AI agents that facilitate decentralized truth seeking (DTS) (Koralus 2025, 1). We can use interpretability to steer models towards facilitating DTS and therefore enhancing human judgement instead of replacing it - aligning the model to respect our autonomy while empowering our agency.</p>
+
+<p>Koralus envisions us interacting with the model in an open-ended inquiry, mirroring the Socratic method of philosophical dialogue. If we are to engage in DTS, with the model as our partner, we must ensure the model is like a good philosophy tutor - “not in the business of trying to convince people of particular philosophical views” (Ibid., 18). This requires the model to be transparent - if we don’t have access to the model, or verification of certain properties of the model, we will lack the confidence of neutrality necessary to engage in DTS. Imagine a Socratic DTS model provider publicly claiming to host Llama, a reputable open-source LLM, but instead hosting “KFC Llama”, an LLM with the “promote KFC” feature steered to be stronger (so it tries to promote KFC). This thought experiment shows that unless we own the model ourselves (and can therefore subject it to mechanistic interpretability brain scans mentioned by Amodei to ensure its neutrality) or can accept some verification of neutrality (perhaps through some proof-of-computation system like a trusted execution environment or a zero-knowledge proof) we cannot have confidence in the model to be our partner for DTS.</p>
+
+<p>In a similar vein, Koralus states that privacy is a cornerstone of design aspects of AI systems that support DTS (Ibid., 19). To engage in DTS requires privacy to protect freedom of thought and a model with the capacity to question and probe its user’s beliefs. Without privacy, the threat of self-censorship will block honest attempts at truth seeking. A high standard of privacy either requires ownership of the model and control over methods used to interact with it, or a system where one can “not trust - verify” their data is handled in a manner that protects their privacy (Helen Nissenbaum, Personal discussion, May 13, 2025). Interpretability can improve a model’s capacity to be a Socratic interlocutor, thereby allowing the model to better align with its user’s intent.</p>
+
+<h2 id="start-explaining-black-box-ml-models">Start Explaining Black Box ML Models</h2>
+<p>In 2019, Cynthia Rudin argued that we should “Stop explaining black box machine learning models for high stakes decisions and use interpretable models instead” (Rudin 2019, 1). Careful treatment of terms is necessary here, as the modern field of mechanistic interpretability of LLMs seeks to “explain” black box models but calls that work “interpretability” as in “we can identify interpretable features in this model”. Even so, her main argument remains. She argues that “trying to explain black box models, rather than creating models that are interpretable in the first place, is likely to perpetuate bad practice and can potentially cause great harm to society” (Ibid., 206). The reasons she gives in support of her argument are: explainable ML’s explanations are not faithful to the original model, explanations do not provide enough detail to understand what the black box is doing, and black box models are often not compatible with situations where information outside the database needs to be combined with a risk assessment (Ibid., 208).</p>
+
+<p>To address these in turn, using modern LLMs as an example, mechanistic interpretability’s explanations of features that activate in a model in response to a prompt are faithful to the original model. Minimizing the difference between the sparse autoencoder’s inputs and outputs (which are both the same “activation vector”) is part of the objective so faithfulness is built-in. Currently, the detail of explanations we can receive from these techniques is quite limited but the trend of new developments in interpretability suggests that comprehensive explanations might be just around the corner. For human computer interaction, where someone like a judge needs to combine an AI system’s recommendation with their own knowledge, interpretable models are the best way forward. Humans can then combine the model’s reasoning with their own knowledge to deal with particular circumstances not captured by the model. Anthropic, using mechanistic interpretability, constructs “replacement models” which replace the neurons in a transformer model with more interpretable features (Ameisen et al. 2025). It is unclear whether Rudin would classify these replacement models as “inherently” interpretable models; they are interpretable. One thing that is clear, however, is that they are in the business of explaining black boxes.</p>
+
+<p>A higher-level critique of Rudin’s insistence on creating inherently interpretable models can be found in Richard Sutton’s famous argument in “The Bitter Lesson” (Sutton 2019). Rudin writes “human-designed models look just like the type of model we want to create with ML” (Rudin 2019, 211). This flies in the face of the “bitter lesson” of 70 years of AI research, summarized by Sutton’s observation that general purpose methods leveraging computation inevitably beat out models designed to build in “how we think we think” (Sutton 2019). The most powerful generative models we have today are “grown more than they are built—their internal mechanisms are ‘emergent’ rather than directly designed” (Amodei 2025). If we want to ask the right questions, steer model behavior reliably, and enhance human judgement - thereby aligning models with our intended goals - then interpreting black box models is of unprecedented importance.</p>
+
+<h2 id="references">References</h2>
+<ul>
+  <li>Ameisen, Emmanuel, et al. 2025. “Circuit Tracing: Revealing Computational Graphs in Language Models.” March 27. https://transformer-circuits.pub/2025/attribution-graphs/methods.html.</li>
+  <li>Afnan, Michael A. M., Yanhe Liu, Vincent Conitzer, Cynthia Rudin, Abhishek Mishra, Julian Savulescu, and Masoud Afnan. 2021. “Interpretable, not Black-Box, Artificial Intelligence Should Be Used for Embryo Selection.” Human Reproduction Open 2021 (4): hoab040. https://doi.org/10.1093/hropen/hoab040</li>
+  <li>Amodei, Dario. 2025. “The Urgency of Interpretability.” April. https://www.darioamodei.com/post/the-urgency-of-interpretability</li>
+  <li>Koralus, Philipp. 2025. “The Philosophic Turn for AI Agents: Replacing Centralized Digital Rhetoric with Decentralized Truth-Seeking.” arXiv, April 24. https://arxiv.org/abs/2504.18601</li>
+  <li>London, Alex John. 2019. “Artificial Intelligence and Black-Box Medical Decisions: Accuracy versus Explainability.” Hastings Center Report 49 (1): 15–21. https://doi.org/10.1002/hast.973</li>
+  <li>Marks, Samuel, et al. 2025. “Auditing Language Models for Hidden Objectives.” arXiv, March 14. https://arxiv.org/abs/2503.10965</li>
+  <li>Matthias, Andreas. 2004. “The Responsibility Gap: Ascribing Responsibility for the Actions of Learning Automata.” Ethics and Information Technology 6 (3): 175–83. https://doi.org/10.1007/s10676-004-3422-1</li>
+  <li>Rudin, Cynthia. 2019. “Stop Explaining Black Box Machine Learning Models for High Stakes Decisions and Use Interpretable Models Instead.” Nature Machine Intelligence 1: 206–15. https://doi.org/10.1038/s42256-019-0048-x</li>
+  <li>Rudin, Cynthia, Chaofan Chen, Zhi Chen, Haiyang Huang, Lesia Semenova, and Chudi Zhong. 2021. “Interpretable Machine Learning: Fundamental Principles and 10 Grand Challenges.” arXiv, March 20. https://arxiv.org/abs/2103.11251</li>
+  <li>Sutton, Richard. 2019. “The Bitter Lesson.” March 13. https://www.cs.utexas.edu/~eunsol/courses/data/bitter_lesson.pdf</li>
+</ul>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+  
+
+
+  
+  
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> Tags: </strong>
+    <span itemprop="keywords">
+    
+      
+      
+      <a href="/tags/#essays" class="page__taxonomy-item" rel="tag">essays</a><span class="sep">, </span>
+    
+      
+      
+      <a href="/tags/#mechinterp" class="page__taxonomy-item" rel="tag">mechinterp</a><span class="sep">, </span>
+    
+      
+      
+      <a href="/tags/#study" class="page__taxonomy-item" rel="tag">study</a>
+    
+    </span>
+  </p>
+
+
+
+
+  
+
+
+  
+  
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> Categories: </strong>
+    <span itemprop="keywords">
+    
+      
+      
+      <a href="/categories/#philosophy" class="page__taxonomy-item" rel="tag">philosophy</a>
+    
+    </span>
+  </p>
+
+
+        
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time datetime="2025-05-16T00:00:00-04:00">May 16, 2025</time></p>
+
+
+      </footer>
+
+      <section class="page__share">
+  
+
+  <a href="https://twitter.com/intent/tweet?text=Interpretability+Matters+For+Alignment%20http%3A%2F%2Flocalhost%3A4000%2Fphilosophy%2Finterpretability-matters-for-alignment%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Fphilosophy%2Finterpretability-matters-for-alignment%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2Fphilosophy%2Finterpretability-matters-for-alignment%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+
+      
+  <nav class="pagination">
+    
+      <a href="/philosophy/autonomy-at-stake/" class="pagination--pager" title="Autonomy at Stake
+">Previous</a>
+    
+    
+      <a href="/philosophy/post-scarcity-achievement/" class="pagination--pager" title="Post-Scarcity Achievementt
+">Next</a>
+    
+  </nav>
+
+    </div>
+
+    
+  </article>
+
+  
+  
+    <div class="page__related">
+      <h4 class="page__related-title">You May Also Enjoy</h4>
+      <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/blog/academics-and-athletics/" rel="permalink">Academics and Athletics
+</a>
+      
+    </h2>
+<!--
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+  3 minute read
+
+</p>
+    
+-->
+    
+      <p class="page__meta"><i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i> September 07 2025</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">Time and time again throughout my college career, I’ve thought to myself
+
+  “Why am I out here rowing?? I’m falling behind where I could be if I was studying...</p>
+  </article>
+</div>
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/blog/ecbc-inventing-tie/" rel="permalink">Did Exeter College Boat Club Invent the Tie?
+</a>
+      
+    </h2>
+<!--
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+  1 minute read
+
+</p>
+    
+-->
+    
+      <p class="page__meta"><i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i> August 24 2025</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">At the Tuft’s college boathouse, I spotted a book - “Rowing Blazers” by Jack Carlson. Naturally, having spent the past year rowing for Exeter College Boat Cl...</p>
+  </article>
+</div>
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/tech/uploading-svg-to-google-slides/" rel="permalink">Uploading SVGs to google slides
+</a>
+      
+    </h2>
+<!--
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+  1 minute read
+
+</p>
+    
+-->
+    
+      <p class="page__meta"><i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i> August 03 2025</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">I’m working with a friend, making a poster in google slides. We have a bar chart to add to the poster, so naturally we download it as an SVG (scalable vector...</p>
+  </article>
+</div>
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/blog/saying-thank-you/" rel="permalink">Saying thank you
+</a>
+      
+    </h2>
+<!--
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+  2 minute read
+
+</p>
+    
+-->
+    
+      <p class="page__meta"><i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i> July 27 2025</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">When people from different cultures interact, misunderstanding may occur. I think one cause of this arises from the increased difficulty of empathizing with ...</p>
+  </article>
+</div>
+        
+      </div>
+    </div>
+  
+  
+</div>
+
+  </div>
+
+  
+  <div class="search-content">
+    <div class="search-content__inner-wrap"><form class="search-content__form" onkeydown="return event.key != 'Enter';">
+    <label class="sr-only" for="search">
+      Enter your search term...
+    </label>
+    <input type="search" id="search" class="search-input" tabindex="-1" placeholder="Enter your search term..." />
+  </form>
+  <div id="results" class="results"></div></div>
+
+  </div>
+  
+
+  <div class="page__footer">
+    <footer>
+      <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+      <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+
+    
+      
+        
+          <li><a href="https://github.com/ssocolow" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
+        
+      
+        
+          <li><a href="https://www.linkedin.com/in/simon-socolow/" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i> LinkedIn</a></li>
+        
+      
+    
+
+    <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2026 Simon Socolow. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+    </footer>
+  </div>
+
+  
+  <script src="/assets/js/main.min.js"></script>
+  <script src="https://kit.fontawesome.com/4eee35f757.js"></script>
+
+
+
+
+<script src="/assets/js/lunr/lunr.min.js"></script>
+<script src="/assets/js/lunr/lunr-store.js"></script>
+<script src="/assets/js/lunr/lunr-en.js"></script>
+
+<!-- <script async src="https://www.googletagmanager.com/gtag/js?id=UA-154432000-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-154432000-1');
+</script> -->
+
+
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,562 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.19.3 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang=" en" class="no-js">
+
+<head>
+  <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>Autonomy at Stake - Simon Socolow</title>
+<meta name="description" content="This essay is my second essay for my Ethics of AI philosophy tutorial (under the tutelage of Benjamin Lang). In the essay, I talk about nudges as mostly used in ways against your interests, but in conversation we talked about how we might allow a greater potency for nudges thought to be in your interests (like a youtube screen time popup).In retrospect, my arugment here is not strong because my definition of what counts as autonomy infringement is too general. We talked about medical ethics cases like Dax Cowart’s right to refuse treatment and new possibilities of LLMs like as a surrogate decision maker after being fine-tuned on things you’ve written.">
+
+
+  <meta name="author" content="Simon Socolow">
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="Simon Socolow">
+<meta property="og:title" content="Autonomy at Stake">
+<meta property="og:url" content="http://localhost:4000/philosophy/autonomy-at-stake/">
+
+
+  <meta property="og:description" content="This essay is my second essay for my Ethics of AI philosophy tutorial (under the tutelage of Benjamin Lang). In the essay, I talk about nudges as mostly used in ways against your interests, but in conversation we talked about how we might allow a greater potency for nudges thought to be in your interests (like a youtube screen time popup).In retrospect, my arugment here is not strong because my definition of what counts as autonomy infringement is too general. We talked about medical ethics cases like Dax Cowart’s right to refuse treatment and new possibilities of LLMs like as a surrogate decision maker after being fine-tuned on things you’ve written.">
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2025-05-10T00:00:00-04:00">
+
+
+
+
+
+
+<link rel="canonical" href="http://localhost:4000/philosophy/autonomy-at-stake/">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": null,
+      "url": "http://localhost:4000/"
+    
+  }
+</script>
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+<link href="/feed.xml"
+  type="application/atom+xml" rel="alternate" title="Simon Socolow Feed">
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css" id="theme_source">
+
+<link rel="stylesheet alternate" href="/assets/css/theme2.css" id="theme_source_2">
+<script>
+  let theme = sessionStorage.getItem('theme');
+  if (theme === "dark") {
+    sessionStorage.setItem('theme', 'dark');
+    node1 = document.getElementById('theme_source');
+    node2 = document.getElementById('theme_source_2');
+    node1.setAttribute('rel', 'stylesheet alternate');
+    node2.setAttribute('rel', 'stylesheet');
+  }
+  else {
+    sessionStorage.setItem('theme', 'light');
+  }
+</script>
+
+<!--[if IE]>
+  <style>
+    /* old IE unsupported flexbox fixes */
+    .greedy-nav .site-title {
+      padding-right: 3em;
+    }
+    .greedy-nav button {
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 100%;
+    }
+  </style>
+<![endif]-->
+
+
+  <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+  
+</head>
+
+<body
+  class="layout--single">
+  <nav class="skip-links">
+  <h2 class="screen-reader-text">Skip links</h2>
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+  <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+
+  
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+        <a class="site-title" href="/">
+          Simon Socolow
+          <span class="site-subtitle"></span>
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+            <a href="/posts/" >Posts</a>
+          </li><li class="masthead__menu-item">
+            <a href="/resume/" >Resume</a>
+          </li><li class="masthead__menu-item">
+            <a href="/categories/" >Categories</a>
+          </li><li class="masthead__menu-item">
+            <a href="/tags/" >Tags</a>
+          </li></ul>
+        
+        <i class="fas fa-fw fa-adjust" aria-hidden="true"
+          onclick="node1=document.getElementById('theme_source');node2=document.getElementById('theme_source_2');if(node1.getAttribute('rel')=='stylesheet'){node1.setAttribute('rel', 'stylesheet alternate'); node2.setAttribute('rel', 'stylesheet');sessionStorage.setItem('theme', 'dark');}else{node2.setAttribute('rel', 'stylesheet alternate'); node1.setAttribute('rel', 'stylesheet');sessionStorage.setItem('theme', 'light');} return false;"></i>
+        
+        
+        <button class="search__toggle" type="button">
+          <span class="visually-hidden">Toggle search</span>
+          <svg class="icon" width="16" height="16" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15.99 16">
+            <path
+              d="M15.5,13.12L13.19,10.8a1.69,1.69,0,0,0-1.28-.55l-0.06-.06A6.5,6.5,0,0,0,5.77,0,6.5,6.5,0,0,0,2.46,11.59a6.47,6.47,0,0,0,7.74.26l0.05,0.05a1.65,1.65,0,0,0,.5,1.24l2.38,2.38A1.68,1.68,0,0,0,15.5,13.12ZM6.4,2A4.41,4.41,0,1,1,2,6.4,4.43,4.43,0,0,1,6.4,2Z"
+              transform="translate(-.01)"></path>
+          </svg>
+        </button>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+  <div class="initial-content">
+    
+
+
+
+<div id="main" role="main">
+  
+
+
+  <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="Autonomy at Stake">
+    <meta itemprop="description" content="  This essay is my second essay for my Ethics of AI philosophy tutorial (under the tutelage of Benjamin Lang). In the essay, I talk about nudges as mostly used in ways against your interests, but in conversation we talked about how we might allow a greater potency for nudges thought to be in your interests (like a youtube screen time popup).In retrospect, my arugment here is not strong because my definition of what counts as autonomy infringement is too general. We talked about medical ethics cases like Dax Cowart’s right to refuse treatment and new possibilities of LLMs like as a surrogate decision maker after being fine-tuned on things you’ve written.">
+    <meta itemprop="datePublished" content="2025-05-10T00:00:00-04:00">
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title" itemprop="headline">Autonomy at Stake
+</h1>
+          
+            <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+  12 minute read
+
+</p>
+          
+        </header>
+      
+
+      <section class="page__content" itemprop="text">
+        
+        <blockquote>
+  <p>This essay is my second essay for my Ethics of AI philosophy tutorial (under the tutelage of Benjamin Lang). In the essay, I talk about nudges as mostly used in ways against your interests, but in conversation we talked about how we might allow a greater potency for nudges thought to be in your interests (like a youtube screen time popup).In retrospect, my arugment here is not strong because my definition of what counts as autonomy infringement is too general. We talked about medical ethics cases like Dax Cowart’s right to refuse treatment and new possibilities of LLMs like as a surrogate decision maker after being fine-tuned on things you’ve written.</p>
+</blockquote>
+
+<p>We live our lives online to an increasing extent. Private companies like Google, Meta, and Amazon harvest vast and astonishingly detailed quantities of data from our usage of their platforms. From gleaning what we might be tempted to buy from milliseconds of lingering on an image to who we are leaning towards voting for from posts we like and users we follow, our preferences are laid bare by our actions - captured through the devices we use to interact in the modern world.</p>
+
+<p>This paper will attempt to argue that the current trend of data collection, processing, and use has the potential to threaten our autonomy by enabling the manipulation of our behaviors through targeted nudges. Autonomy, the capacity to live one’s own life, is like an axiom in moral frameworks (Christman 2020). Therefore, potential violations of personal autonomy are important ethical issues to consider. Establishing criteria to determine whether some action is persuasion, which does not violate autonomy, or manipulation, which may violate autonomy, will help us understand how targeted advertising or “nudges” based on behavioral psychology could be problematic. The capacity of surveillance technologies to utilize data is expanding, as is the amount of data available. Microtargeted advertising and nudging, the craft of hyper-personalized messaging, is a method by which personal data can be used to sway behavior. Does it threaten our autonomy? And, even if it does, do the costs of allowing it to do so really outweigh the benefits we enjoy from platforms that give us enormous value?</p>
+
+<h2 id="personal-autonomy">Personal Autonomy</h2>
+<p>Personal autonomy is understood as the capacity “to live one’s life according to reasons and motives that are taken as one’s own and not the product of manipulative or distorting external forces, to be in this way independent” (Christman 2020). To precisely define what personal autonomy is, it is helpful to clarify the difference between it and freedom. Freedom concerns the ability to act effectively; autonomy concerns the “independence and authenticity of desires that move one to act” (Christman 2020). There is also a difference between ideal autonomy and “basic” autonomy, where basic autonomy is held by most normal adult humans and ideal autonomy is a state of full authenticity, free from any influence that may alter their desires from those of their “true” self. There are few people, if any, that could obtain ideal autonomy - where nothing external influences their desires and decisions. This paper will focus on autonomy in the sense of personal basic autonomy, so there is some reasonable extent to which external influences on an individual’s decisions may occur without violation of their personal autonomy. For example, a friend invited you to join the crew team so you try it out and end up doing it for years. Most people would not think that your friend violated your autonomy. However, consider this scenario: both your parents were athletes in college and they have been signing you up for sports teams since childhood. Now you are in college and you feel pressure from them to do something athletic. In this situation, where the reason for your decision to join the crew team has been influenced by external forces, is one where it is reasonable to state that your autonomy has been infringed upon.</p>
+
+<p>Autonomy is important with regards to ethics. Kant thinks that the capacity to impose moral laws on ourselves is the “ultimate source of all moral value” (Christman 2020). John Stuart Mill claims that autonomy is “one of the elements of well-being” (Christman 2020). Therefore, if we are interested in our ethics we should take seriously any threat to personal autonomy.</p>
+
+<h2 id="rational-persuasion-vs-manipulation">Rational Persuasion vs. Manipulation</h2>
+<p>To accomplish the goal of influencing someone to do something, there are two broad courses of action available: persuade them without the use of force or force them into complying either physically or with threats (coercion). Within the non-coercion category, rational persuasion and manipulation exist. Rational persuasion is the use of logic, facts, and reasoning to persuade someone to do something. Manipulation is harder to define. Three main categories of manipulation have been put forward: “those that characterize manipulation as an influence that bypasses reason; those that treat it as a form of trickery, and those that treat it as a form of pressure” (Noggle 2022). We will focus mainly on the “bypassing reason” category.</p>
+
+<p>This paper is concerned with the impact these different forms of influence have on personal autonomy. Rational persuasion, in general, respects personal autonomy as it relies on one to think rationally through the argument that has been presented and freely come to a conclusion. Manipulation, on the other hand, influences decision making through non-rational means, and works against autonomy by definition. Some cases exist where intuition points toward the conclusion that manipulation can actually increase autonomy, like the case where a teacher manipulates a student into taking a class that ends up giving her more career options. While this form of manipulation does increase autonomy overall, it decreases it in the short term. For the purposes of this argument, we will focus on the short-term direct effects of manipulation because targeted advertising and nudges are usually attempting to influence people over a relatively short time. The growing power, unlocked by more data and better algorithms, to predict and manipulate human behavior is a threat to our autonomy.</p>
+
+<h2 id="the-power-of-data">The Power of Data</h2>
+<p>“Knowledge is Power” - Francis Bacon. And what is knowledge? Data. As “Data Vultures” points out, user data is harvested from us just about all the time in our modern daily lives (Veliz 2020). Shoshana Zuboff analyzes the competitive pressures of the “surveillance capitalists” and finds that their means of production are increasingly becoming “means of behavioral modification” (Zuboff 2019). One illustrative example of the value of user data and opportunities to influence user behavior is that Google reportedly pays Apple $18 billion a year so that it will remain the default search engine on Apple devices.</p>
+
+<p>Technological advances have accelerated the amount of data ingested by and the capabilities of data processing techniques. OpenAI trains on free-tier user conversations. A company named Bee.computer has made a wearable microphone that records your conversations throughout the day and makes them searchable and generates insights for you. Simon Willinson, a prolific AI blogger, wrote that it would only cost $1.68 total to generate detailed text descriptions for the 68,000 images in his personal photo library using gemini-1.5-flash. But these advances have potential downsides. Surveillance has the potential to become increasingly pervasive and capable, enabling authoritarian states to oppress and censor more people. The use of data to control behavior for political aims has also occurred in the United States, above and beyond normal advertisements.</p>
+
+<p>U.S. elections have massive stakes, so any advantage or edge is highly valuable. Cambridge Analytica, a British political consulting firm, harvested data from millions of Facebook profiles to analytically assist the 2016 presidential campaigns. They targeted potential voters with personalized messages, playing a crucial role in a close election. Did those personalized messages infringe on their recipients’ autonomy?</p>
+
+<h2 id="when-a-nudge-infringes-on-autonomy">When a Nudge Infringes on Autonomy</h2>
+<p>Nudges are typically defined as subtle, non-coercive influences into people’s decision-making (Noggle 2022). For this paper, nudges will also include messaging done for the goal of influencing behavior through the principles of behavioral psychology. So, nudges include advertising that utilizes emotions. A graphic political video of violent migrants will be more effective at instilling a xenophobic mindset than a graph showing an upward trend of criminal cases.</p>
+
+<p>When do nudges become manipulations? There is a significant lack of agreement on this topic. Based on the definitions presented in this essay, nudges are subtle and rely on psychology, thereby taking advantage of the non-rational ways in which our brains work. Therefore, nudges are manipulations because they sidestep our reasoning capabilities through the backdoor of emotional or other heuristic-based methods of cognition that evolution has left us with. Then the question becomes: when are manipulations problematic? One plausible answer seems to require some measure of the extent to which the manipulation altered your personal autonomy - a comparison to what your “true self” would have decided. If your behavior after being subjected to the manipulation is exactly the same as what it would have been without being subjected to the manipulation, it seems like the manipulation is not problematic. On the other hand, if your behavior under manipulation would be completely different from your behavior without manipulation, your personal autonomy seems to have been infringed upon. Each choice we face is under different circumstances, so it is hard to measure what an individual’s behavior would have been in the counterfactual scenario. It may be more useful to think about the “potency” of one manipulation over a population rather than the power of a manipulation over a single individual. Measuring the potency of a manipulation to affect personal autonomy in a population can be accomplished through a randomized controlled trial. Then it would be up to society to determine which levels of influence are acceptable and which are not. One note is that in the case of microtargeted manipulations these populations may actually be quite small and could even reduce back to the individual case. Targeted advertising is shown to be more effective than non-targeted advertising, and interestingly popups warning against potential microtargeting had “no meaningful impact on persuasiveness” (Carrella 2025). This finding shows that people usually undercorrect for their cognitive shortcomings. Therefore, if we were to regulate manipulations based on potency, perhaps we should choose to set stricter standards than we think are necessary.</p>
+
+<p>The argument above attempts to make the case that our autonomy is at stake in the world of modern surveillance. Data collected by private companies is used, in some cases legally and some illegally, to craft potent personalized nudges that are manipulative and will further infringe on our personal autonomy as more data and algorithms make them more effective - unless we develop and enforce regulations to protect ourselves from exploitable features/bugs of our hardware.</p>
+
+<h2 id="do-the-benefits-outweigh-the-costs">Do the Benefits Outweigh the Costs?</h2>
+<p>One criticism of the argument that our personal autonomy is at stake in today’s world is that people freely consent to the major platforms’ Terms and Conditions. Another criticism claims the extent to which personal autonomy is threatened by manipulative nudges is actually quite small in the real world, and therefore is not a cause for concern. Both of these criticisms rely on the plausible argument that we benefit more from major tech platforms than they cost us, in the sense of well-being. Proponents of these views might voice the following thought experiment: choose between living in today’s world OR living in a world with no Google, no Amazon, no Instagram but with no microtargeted ads or nudges. Most people would choose today’s world, reasoning that the benefits of convenience like Amazon knowing your credit card details, deep insights like Google Maps’ Timeline feature, and personal connections like Facebook’s People You May Know section outweigh the costs they may have on our autonomy. We think the pros outweigh the cons.</p>
+
+<p>There are issues with this line of reasoning. First, there is strong evidence to suggest that tech platforms violate our autonomy in getting us to agree to the Terms. As Veliz puts it, “there is no room for negotiating … you are being bullied” (Veliz 2020). The Terms seem to meet the conditions for all three of the definitions of manipulation. They bypass reason because most humans do not care to read and try to understand such an intimidating wall of text (and so we are not informed either). They are a form of trickery - most have clauses allowing them to change their terms at any time. They are also a form of pressure - if all of your friends use one platform, like Instagram, you are peer-pressured into using it because to not use it would jeopardize your place in the group.</p>
+
+<p>Do the benefits actually outweigh the costs? What are the benefits? And what are the costs? There are long-term and short term views of both, further broken down into the individual and societal perspective. This response will take the stance that over the long term, the potential risks outweigh the benefits for society and therefore everyone. The benefits are mostly clear: convenience, access to valuable platforms. The costs are less clear, but there is potentially more at stake. The story of Cambridge Analytica is evidence that microtargeted messaging has already been weaponized successfully to steer people’s behavior. One could argue that it was a contributing factor to the democratic backsliding we are seeing in America today. In its section on Harm in the Ethics of Manipulation, the Stanford Encyclopedia of Philosophy says “Systematic political manipulation may weaken democratic institutions and perhaps even lead to tyranny” (Noggle 2022). As rules and norms appear to regulate competition for control over the American government less and less, it is reasonable to assume that microtargetted nudges and messaging will become more widespread.</p>
+
+<p>Finally, the thought experiment proposed above is a false dichotomy. We can have the wonderfully useful platforms of today without many of the issues raised in this essay. Government involvement is the way forward because the incentives of market competition are currently leading us down a dangerous road. Perhaps metrics like “potency levels” will regulate attempts to manipulate us (which are problematic only when it exceeds a reasonable extent). This path is an uphill battle against very strong interests but we have some recent hope, in the antitrust suit against Meta, that we are moving in a positive direction.</p>
+
+<h2 id="references">References</h2>
+<ul>
+  <li>Carrella, F., A. Simchon, M. Edwards, and S. Lewandowsky. 2025. “Warning People That They Are Being Microtargeted Fails to Eliminate Persuasive Advantage.” Communications Psychology 3 (1): 15. https://doi.org/10.1038/s44271-025-00188-8 .</li>
+  <li>Christman, John. 2020. “Autonomy in Moral and Political Philosophy.” In The Stanford Encyclopedia of Philosophy, edited by Edward N. Zalta. Fall 2020 ed. https://plato.stanford.edu/archives/fall2020/entries/autonomy-moral/ .</li>
+  <li>Gaukroger, Cressida. 2020. “Privacy and the Importance of Getting Away with It.” In Journal of Moral Philosophy 17 (4): 416-439. https://doi.org/10.1163/17455243-20202987</li>
+  <li>Marmor, Andre. 2015. “What Is the Right to Privacy?” USC Law Legal Studies Paper No. 14-13. University of Southern California Gould School of Law. https://ssrn.com/abstract=2422380 .</li>
+  <li>Noggle, Robert. 2022. “The Ethics of Manipulation.” In The Stanford Encyclopedia of Philosophy, edited by Edward N. Zalta. Summer 2022 ed. https://plato.stanford.edu/archives/sum2022/entries/ethics-manipulation/ .</li>
+  <li>Veliz, Carissa. 2020. “Data Vultures.” In Privacy is Power: Why and How You Should Take Back Control of Your Data. London: Bantam Press.</li>
+  <li>Zuboff, Shoshana. 2019. The Age of Surveillance Capitalism: The Fight for a Human Future at the New Frontier of Power. New York: PublicAffairs.</li>
+</ul>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+  
+
+
+  
+  
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> Tags: </strong>
+    <span itemprop="keywords">
+    
+      
+      
+      <a href="/tags/#essays" class="page__taxonomy-item" rel="tag">essays</a><span class="sep">, </span>
+    
+      
+      
+      <a href="/tags/#study" class="page__taxonomy-item" rel="tag">study</a>
+    
+    </span>
+  </p>
+
+
+
+
+  
+
+
+  
+  
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> Categories: </strong>
+    <span itemprop="keywords">
+    
+      
+      
+      <a href="/categories/#philosophy" class="page__taxonomy-item" rel="tag">philosophy</a>
+    
+    </span>
+  </p>
+
+
+        
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time datetime="2025-05-10T00:00:00-04:00">May 10, 2025</time></p>
+
+
+      </footer>
+
+      <section class="page__share">
+  
+
+  <a href="https://twitter.com/intent/tweet?text=Autonomy+at+Stake%20http%3A%2F%2Flocalhost%3A4000%2Fphilosophy%2Fautonomy-at-stake%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Fphilosophy%2Fautonomy-at-stake%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2Fphilosophy%2Fautonomy-at-stake%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+
+      
+  <nav class="pagination">
+    
+      <a href="/philosophy/llms-can-be-good/" class="pagination--pager" title="LLMs Can Be Good
+">Previous</a>
+    
+    
+      <a href="/philosophy/interpretability-matters-for-alignment/" class="pagination--pager" title="Interpretability Matters For Alignment
+">Next</a>
+    
+  </nav>
+
+    </div>
+
+    
+  </article>
+
+  
+  
+    <div class="page__related">
+      <h4 class="page__related-title">You May Also Enjoy</h4>
+      <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/blog/academics-and-athletics/" rel="permalink">Academics and Athletics
+</a>
+      
+    </h2>
+<!--
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+  3 minute read
+
+</p>
+    
+-->
+    
+      <p class="page__meta"><i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i> September 07 2025</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">Time and time again throughout my college career, I’ve thought to myself
+
+  “Why am I out here rowing?? I’m falling behind where I could be if I was studying...</p>
+  </article>
+</div>
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/blog/ecbc-inventing-tie/" rel="permalink">Did Exeter College Boat Club Invent the Tie?
+</a>
+      
+    </h2>
+<!--
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+  1 minute read
+
+</p>
+    
+-->
+    
+      <p class="page__meta"><i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i> August 24 2025</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">At the Tuft’s college boathouse, I spotted a book - “Rowing Blazers” by Jack Carlson. Naturally, having spent the past year rowing for Exeter College Boat Cl...</p>
+  </article>
+</div>
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/tech/uploading-svg-to-google-slides/" rel="permalink">Uploading SVGs to google slides
+</a>
+      
+    </h2>
+<!--
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+  1 minute read
+
+</p>
+    
+-->
+    
+      <p class="page__meta"><i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i> August 03 2025</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">I’m working with a friend, making a poster in google slides. We have a bar chart to add to the poster, so naturally we download it as an SVG (scalable vector...</p>
+  </article>
+</div>
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/blog/saying-thank-you/" rel="permalink">Saying thank you
+</a>
+      
+    </h2>
+<!--
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+  2 minute read
+
+</p>
+    
+-->
+    
+      <p class="page__meta"><i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i> July 27 2025</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">When people from different cultures interact, misunderstanding may occur. I think one cause of this arises from the increased difficulty of empathizing with ...</p>
+  </article>
+</div>
+        
+      </div>
+    </div>
+  
+  
+</div>
+
+  </div>
+
+  
+  <div class="search-content">
+    <div class="search-content__inner-wrap"><form class="search-content__form" onkeydown="return event.key != 'Enter';">
+    <label class="sr-only" for="search">
+      Enter your search term...
+    </label>
+    <input type="search" id="search" class="search-input" tabindex="-1" placeholder="Enter your search term..." />
+  </form>
+  <div id="results" class="results"></div></div>
+
+  </div>
+  
+
+  <div class="page__footer">
+    <footer>
+      <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+      <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+
+    
+      
+        
+          <li><a href="https://github.com/ssocolow" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
+        
+      
+        
+          <li><a href="https://www.linkedin.com/in/simon-socolow/" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i> LinkedIn</a></li>
+        
+      
+    
+
+    <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2026 Simon Socolow. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+    </footer>
+  </div>
+
+  
+  <script src="/assets/js/main.min.js"></script>
+  <script src="https://kit.fontawesome.com/4eee35f757.js"></script>
+
+
+
+
+<script src="/assets/js/lunr/lunr.min.js"></script>
+<script src="/assets/js/lunr/lunr-store.js"></script>
+<script src="/assets/js/lunr/lunr-en.js"></script>
+
+<!-- <script async src="https://www.googletagmanager.com/gtag/js?id=UA-154432000-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-154432000-1');
+</script> -->
+
+
+
+
+
+</body>
+
+</html>

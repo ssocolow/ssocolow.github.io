@@ -72,20 +72,15 @@ author:
   name: "Simon Socolow"
   avatar: "/assets/images/headshot.jpg"
   bio: " Interested in aligning AI and empowering individuals with cryptosystems"
-  location: "Bangor, ME USA"
   links:
     - label: "Email"
-      icon: "fas fa-fw fa-envelope"
       url: "mailto:sms12@williams.edu"
     - label: "GitHub"
-      icon: "fab fa-fw fa-github"
       url: "https://github.com/ssocolow"
     - label: "LinkedIn"
-      icon: "fab fa-fw fa-linkedin"
       url: "https://www.linkedin.com/in/simon-socolow/"
     - label: "Anonymous Feedback Form"
-      icon: "fab fa-fw fa-comment"
-      url: "https://www.linkedin.com/in/simon-socolow/"
+      url: "https://forms.gle/iukjAESvou8kEuhR9"
 
 footer:
   links:

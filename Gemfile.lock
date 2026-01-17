@@ -280,6 +280,7 @@ GEM
     unf_ext (0.0.8.2)
     unicode-display_width (1.8.0)
     verbal_expressions (0.1.5)
+    webrick (1.9.2)
 
 PLATFORMS
   ruby
@@ -298,6 +299,7 @@ DEPENDENCIES
   kramdown (>= 2.3.0)
   minimal-mistakes-jekyll
   tzinfo-data
+  webrick (~> 1.9)
 
 BUNDLED WITH
-   1.17.2
+  4.0.4

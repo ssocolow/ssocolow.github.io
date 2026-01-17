@@ -1,0 +1,794 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.19.3 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang=" en" class="no-js">
+
+<head>
+  <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>Group Theory Explainer - Simon Socolow</title>
+<meta name="description" content="Group Theory I learned group theory from Misha for Michaelmas term and his last assignment was for us to create a document to help us remember what we’ve learned in the course. I think this final assignment was helpful because it forced me to create a cohesive big-picture view of the subject as a whole. The original latex is here, this markdown was generated with pandoc.">
+
+
+  <meta name="author" content="Simon Socolow">
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="Simon Socolow">
+<meta property="og:title" content="Group Theory Explainer">
+<meta property="og:url" content="http://localhost:4000/math/24-group-theory-explainer/">
+
+
+  <meta property="og:description" content="Group Theory I learned group theory from Misha for Michaelmas term and his last assignment was for us to create a document to help us remember what we’ve learned in the course. I think this final assignment was helpful because it forced me to create a cohesive big-picture view of the subject as a whole. The original latex is here, this markdown was generated with pandoc.">
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2024-12-05T00:00:00-05:00">
+
+
+
+
+
+
+<link rel="canonical" href="http://localhost:4000/math/24-group-theory-explainer/">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": null,
+      "url": "http://localhost:4000/"
+    
+  }
+</script>
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+<link href="/feed.xml"
+  type="application/atom+xml" rel="alternate" title="Simon Socolow Feed">
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css" id="theme_source">
+
+<link rel="stylesheet alternate" href="/assets/css/theme2.css" id="theme_source_2">
+<script>
+  let theme = sessionStorage.getItem('theme');
+  if (theme === "dark") {
+    sessionStorage.setItem('theme', 'dark');
+    node1 = document.getElementById('theme_source');
+    node2 = document.getElementById('theme_source_2');
+    node1.setAttribute('rel', 'stylesheet alternate');
+    node2.setAttribute('rel', 'stylesheet');
+  }
+  else {
+    sessionStorage.setItem('theme', 'light');
+  }
+</script>
+
+<!--[if IE]>
+  <style>
+    /* old IE unsupported flexbox fixes */
+    .greedy-nav .site-title {
+      padding-right: 3em;
+    }
+    .greedy-nav button {
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 100%;
+    }
+  </style>
+<![endif]-->
+
+
+  <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+  
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'] ],
+      displayMath: [ ['\[','\]'] ],
+      processEscapes: true
+    }
+  });
+</script>
+
+<script type="text/javascript" async
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+</head>
+
+<body
+  class="layout--single">
+  <nav class="skip-links">
+  <h2 class="screen-reader-text">Skip links</h2>
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+  <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+
+  
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+        <a class="site-title" href="/">
+          Simon Socolow
+          <span class="site-subtitle"></span>
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+            <a href="/posts/" >Posts</a>
+          </li><li class="masthead__menu-item">
+            <a href="/resume/" >Resume</a>
+          </li><li class="masthead__menu-item">
+            <a href="/categories/" >Categories</a>
+          </li><li class="masthead__menu-item">
+            <a href="/tags/" >Tags</a>
+          </li></ul>
+        
+        <i class="fas fa-fw fa-adjust" aria-hidden="true"
+          onclick="node1=document.getElementById('theme_source');node2=document.getElementById('theme_source_2');if(node1.getAttribute('rel')=='stylesheet'){node1.setAttribute('rel', 'stylesheet alternate'); node2.setAttribute('rel', 'stylesheet');sessionStorage.setItem('theme', 'dark');}else{node2.setAttribute('rel', 'stylesheet alternate'); node1.setAttribute('rel', 'stylesheet');sessionStorage.setItem('theme', 'light');} return false;"></i>
+        
+        
+        <button class="search__toggle" type="button">
+          <span class="visually-hidden">Toggle search</span>
+          <svg class="icon" width="16" height="16" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15.99 16">
+            <path
+              d="M15.5,13.12L13.19,10.8a1.69,1.69,0,0,0-1.28-.55l-0.06-.06A6.5,6.5,0,0,0,5.77,0,6.5,6.5,0,0,0,2.46,11.59a6.47,6.47,0,0,0,7.74.26l0.05,0.05a1.65,1.65,0,0,0,.5,1.24l2.38,2.38A1.68,1.68,0,0,0,15.5,13.12ZM6.4,2A4.41,4.41,0,1,1,2,6.4,4.43,4.43,0,0,1,6.4,2Z"
+              transform="translate(-.01)"></path>
+          </svg>
+        </button>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+  <div class="initial-content">
+    
+
+
+
+<div id="main" role="main">
+  
+
+
+  <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="Group Theory Explainer">
+    <meta itemprop="description" content="Group TheoryI learned group theory from Misha for Michaelmas term and his last assignment was for us to create a document to help us remember what we’ve learned in the course. I think this final assignment was helpful because it forced me to create a cohesive big-picture view of the subject as a whole. The original latex is here, this markdown was generated with pandoc.">
+    <meta itemprop="datePublished" content="2024-12-05T00:00:00-05:00">
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title" itemprop="headline">Group Theory Explainer
+</h1>
+          
+            <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+  11 minute read
+
+</p>
+          
+        </header>
+      
+
+      <section class="page__content" itemprop="text">
+        
+        <h1 id="group-theory">Group Theory</h1>
+<p>I learned group theory from Misha for Michaelmas term and his last assignment was for us to create a document to help us remember what we’ve learned in the course. I think this final assignment was helpful because it forced me to create a cohesive big-picture view of the subject as a whole. The original latex is <a href="https://www.overleaf.com/read/bxwmnpfssjmq#d4739b">here</a>, this markdown was generated with pandoc.</p>
+
+<h1 id="groups">Groups</h1>
+
+<p>Definition of a Group: Let $G$ be a set and $  *  $ be a binary operation. Then
+$(G,   *  )$ is a group if:</p>
+
+<ul>
+  <li>
+    <p>$  *  $ is a associative: so if
+$g_1,g_2,g_3 \in G, g_1 * (g_2 * g_3) = (g_1  *  g_2)  *  g_3$</p>
+  </li>
+  <li>
+    <p>$G$ contains an identity element (which I will denote as $e$): there
+is $e \in G$ where for any $g \in G$, $g  *  e=e  *  g=g$</p>
+  </li>
+  <li>
+    <p>every element of G has an inverse: if $g \in G$, there exists
+$g^{-1} \in G$ where $g  *  g^{-1}=g^{-1}  *  g=e$</p>
+  </li>
+  <li>
+    <p>$G$ is closed under $ * $ : for any $g_1, g_2 \in G, g_1 * g_2 \in G$</p>
+  </li>
+</ul>
+
+<p>If $G$ is finite, we write $|G|$ for the number of elements in $G$. Note
+that people usually write $g_1g_2$ to mean $g_1 * g_2$.</p>
+
+<h2 id="examples">Examples</h2>
+
+<p>The integers under addition is a group with $e = 0$ and $g^{-1}=-g$. The
+cyclic group of two elements, $C_2$, is a group ${e,a}$ where $aa=e$.
+$C_3$ is a group ${e,a,a^2}$ where $a^2 = aa$ and $a^3=e$. In general,
+the cyclic group $C_n$ is like a clock with $n$ points (and is the “same
+as" = isomorphic to the integers mod n). There are other cool groups
+like the <a href="#https://en.wikipedia.org/wiki/Symmetric_group">symmetric
+group</a>, <a href="#https://en.wikipedia.org/wiki/Dihedral_group">dihedral
+group</a>, the <a href="#https://en.wikipedia.org/wiki/Free_group">free
+group</a>, ... I would like to
+remember that taking time to play around with groups is generally worth
+it - seeing how they interact makes it easier to reason about them.</p>
+
+<h2 id="homomorphism">Homomorphism</h2>
+
+<p>A map of groups $\phi: (G_1, \ast) \to (G_2, \circ)$ is called a
+ <em>homomorphism</em>  if it preserves the group operation:
+[phi(g * h) = \phi(g) \circ \phi(h) \quad \text{for all } g, h \in G_1]</p>
+
+<p>I found concrete examples of homomorphisms hard to find so here is one:
+the homomorphism defined from $\mathbb{Z}$ to $\mathbb{Z}\text{ mod 3}$
+as $0+3n\xrightarrow{}0, 1+3n\xrightarrow{}1,2+3n\xrightarrow{}2$ where
+$n$ is an integer.</p>
+
+<h2 id="isomorphism">Isomorphism</h2>
+
+<p>One important question in group theory is: given two groups A and B, is
+A the “same" as B? One great definition of “sameness" of two groups is
+an isomorphism. An isomorphism is a map between two groups that
+preserves their structure and is also reversible. Formally, an
+isomorphism is a bijective homomorphism. Remember that “bijective"
+means both injective (one-to-one) and surjective (onto).</p>
+
+<h2 id="conjugation">Conjugation</h2>
+
+<p>Two elements $h,k \in G$ are  <em>conjugate</em>  in $G$ if there exists $g\in G$
+such that $h=g^{-1}kg$. Conjugation of an element $k$  * by *  an element
+$g$ gives $g^{-1}kg$. If $b=g^{-1}kg$ then $b$ and $g$ are in the same
+conjugacy class. I found conjugacy classes hard to wrap my head around.
+Conjugacy classes partition a group, and we can see this with
+$D_6={e,r,r^2,s,sr,sr^2}$, the symmetries of the triangle under
+rotation and reflection. The rotations ${r,r^2}$ are a conjugacy class
+because if we conjugate a rotation by any rotation we will end up with a
+rotation and if we do so with any reflection we will end up reflecting
+twice so also end up with a rotation.</p>
+
+<h1 id="subgroups">Subgroups</h1>
+
+<p>Basically, a subgroup is a group that exists inside a group. Definition:
+$(H, * )$ is a subgroup of $(G, * )$ if $H \subseteq G$ and $(H, * )$
+satisfies the properties of a group. We write $H \leq G$.</p>
+
+<h2 id="lagranges-theorem">Lagrange’s Theorem</h2>
+
+<p>If $G$ is finite and $H \leq G$, then $|H|$ divides $|G|$. For example,
+one subgroup of the cyclic group $C_6$ is $C_2$ because ${e,a^3}$ is a
+subgroup of ${e,a,a^2,a^3,a^4,a^5}$ and 2 divides 6.</p>
+
+<h2 id="normal-subgroups">Normal Subgroups</h2>
+
+<p>A group $N$ is normal in $G$ if for every $n\in N$, conjugation by any
+$g\in G$ gives an element of $N$. If $N$ is normal in $G$, we write
+$N \triangleleft G$. Normal subgroups are important because they allow
+for the creation of groups at another level of abstraction - quotient
+groups.</p>
+
+<h1 id="quotient-groups">Quotient Groups</h1>
+
+<p>Quotient groups can be really confusing. I think that’s because I had a
+hard time visualizing them and how they work. To start, let $G$ be a
+group and $H$ be a subgroup of $G$. $G/H$ is the set of (typically left)
+<a href="#https://en.wikipedia.org/wiki/Coset">cosets</a> of $H$ in $G$. So,
+$G/H = {gH | \forall g\in G}$. Here, $gH$ means take the element
+$g \in G$ and make a set containing the result of the group action of
+$g$ with every element of $H$. There might be some $g_1,g_2 \in G$ where
+$g_1H=g_2H$. You can think of the quotient $G/H$ as “modding out" from
+$G$ all the elements $g_1,g_2,…$ where $g_1H=g_2H=…$ so that you are
+left with one element in $G/H$ that represents $g_1,g_2,…$. Example
+below. If $N$ is a  * normal *  subgroup in $G$, then $G/N$ is a group with
+group operation $g_1N  *  g_2N = (g_1g_2)N$.</p>
+
+<h2 id="example">Example</h2>
+
+<p>The quotient group $\mathbb{Z}/8\mathbb{Z}$ is the integers mod 8 =
+${0,1,2,3,4,5,6,7}$. $8\mathbb{Z}$ are the multiples of 8 under
+addition, so $8\mathbb{Z} ={…,-16,-8,0,8,16,…}$. If we take any
+$g \in \mathbb{Z}$ (so any integer $g$), then
+$g(8\mathbb{Z}) = {…,-16+g,-8+g,0+g,8+g,16+g,…}$. We can see that
+$0(8\mathbb{Z})=8(8\mathbb{Z})$ because
+${…,-16+0,-8+0,0+0,8+0,16+0,…} = {…,-16+8,-8+8,0+8,8+8,16+8,…}$.</p>
+
+<h1 id="first-isomorphism-theorem">First Isomorphism Theorem</h1>
+
+<p>If $\phi:G\xrightarrow{}H$ is a homomorphism between groups then the
+kernel of $\phi$ is $\ker\phi={g\in G: \phi(g)=e_H}$. So the kernel is
+what elements in $G$ that $\phi$ sends to the identity in $H$. The image
+of $\phi$ is the set of elements in $H$ that $\phi$ can send elements in
+$G$ to. So Im$\phi={\phi(g):g\in G}$. The First Isomorphism Theorem
+tells us that $G/\ker\phi$ is isomorphic to Im$\phi$ by the map
+$g\ker\phi\rightarrow{\phi(g)}$. I didn’t understand why this was
+important, but Peter helped me see that $G/\ker\phi$ can be thought of
+as <a href="#https://www.math3ma.com/blog/the-first-isomorphism-theorem-intuitively">“things in $G$ that don’t map to the
+identity"</a>
+which is a foundational fact about group structure which I would like to
+remember.</p>
+
+<h1 id="free-groups">Free Groups</h1>
+
+<p>Free groups are the “most free" kind of group because they have the
+fewest restrictions on what elements are allowed to exist. There is a
+theorem that any group is isomorphic to the quotient of a free group.
+Definition: For any set $S$, the free group $F(S)$ are all the “reduced
+words" that can be created from the “alphabet" $S$ (the alphabet
+includes inverse characters). So if $S={a,b}$ then $aa$ is a word,
+$ab$ is a word, $ba$ is a word, and $a^{-1}b$ is also a word. The group
+operation is concatenation, so $ab * ba=abba$. A word is “reduced" if no
+element is next to its inverse, so $aa^{-1}bab$ reduces to $bab$.</p>
+
+<p>Having the background of computer science made me feel comfortable with
+free groups because I could think of the free group elements as
+variables representing strings and I know how string concatenation works
+(just have to remember to simplify, e.g. $baa^{-1}=b$). I’d like to
+remember that any group can be thought of as a free group with some
+restrictions imposed. That segues nicely into</p>
+
+<h1 id="presentations">Presentations</h1>
+
+<p>Presentations are just another way to define a group. When I talk about
+$D_8$, the group of symmetries of the square under reflection and
+rotation with the group operation being composition of those actions, I
+can tell you the elements of $D_8$ are
+${e,r,r^{2},r^{3},s,sr,sr^{2},sr^{3}}$ where $r$ means a rotation by
+$\frac{\pi}{2}$ and $s$ means a reflection about the vertical axis or I
+could tell you that there are two generators $r$ - a rotation - and
+$s$ - a reflection - , where $r^4=s^2=e$ (because rotating 4 times gets
+you back where you started and flipping twice does too) and
+$srs=s^{-1}$. So, I have the free group on the set ${r,s}$ but there
+are restrictions on what elements can exist. In the notation, I would
+write $D_8=&lt;r,s|r^4=e,s^2=e,srs=s^{-1}&gt;$. I struggled with identifying a
+group from it’s presentation - even if it was obvious!. I’d like to
+remember that anything familiar can be made unfamiliar if you view it
+from a different perspective.</p>
+
+<h1 id="jordan-holder-theorem">Jordan-Holder Theorem</h1>
+
+<p>A group can contain nested subgroups, and one of the biggest questions
+in group theory is how we can analyze a group by breaking it into
+smaller pieces to see the structure of the bigger group. A finite group
+$G$ has a  <em>composition series</em> 
+${e}\triangleleft G_1 \triangleleft … \triangleleft G_n=G$ where
+$G_1,…,G_n$ are subgroups of $G$. The Jordan-Holder Theorem (JHT) is
+very similar to the fundamental theorem of arithmetic (the
+prime-factorization theorem: “every integer greater than 1 can be
+represented uniquely as a product of prime numbers, up to the order of
+the factors"). What the JHT tells us is: if $G$ is a finite group, all
+composition series of $G$ have the same length and the same composition
+factors, in some order. So you can kind of think that the composition
+factors for the group are like the prime factors for a number (but there
+can be different groups with the same composition factors). For an
+example, we can see that the composition factors of $D_8$ are
+$C_2,C_2,C_2$. We can write the composition series as
+${e}\triangleleft C_2 \triangleleft C_4 \triangleleft D_8$ or
+${e}\triangleleft C_2 \triangleleft D_4 \triangleleft D_8$ where
+$D_4=C_2\times C_2$. I didn’t realize I could put $D_4$ in the
+composition series for $D_8$ on week 5’s problem set. I’d like to
+remember that the same group composition factors can join into a bigger
+group structure in different ways - that $C_8$ has the same composition
+series as $D_8$ but they are DIFFERENT groups.</p>
+
+<h2 id="classification-of-finite-simple-groups">Classification of Finite Simple Groups</h2>
+
+<p>Simple groups are groups with no proper (different than the original
+group) nontrivial (different than ${e}$) normal subgroups. A landmark
+achievement in group theory was the <a href="#https://en.wikipedia.org/wiki/Classification_of_finite_simple_groups">classification of finite simple
+groups</a>.
+Humanity now knows which exact group types are the building blocks for
+ALL finite groups (because of the Jordan-Holder Theorem). There are some
+crazy finite simple groups, like the
+<a href="#https://www.youtube.com/watch?v=mH0oCDa74tE">Monster</a>.</p>
+
+<h1 id="semi-direct-products">Semi-Direct Products</h1>
+
+<p>First, what is a direct product? A direct product combines two groups
+and forms a new group, but the elements from the two groups don’t
+interact. For example,
+$\mathbb{Z}\times\mathbb{Z}={(a,b):a,b\in\mathbb{Z}}$. So the direct
+product of the integers with itself gives the group of points on the
+Cartesian (integer) plane. And $(a,b) * (c,d)=(a * c,b * d)$. Semi-direct
+products are more interesting because they let elements in both groups
+interact. To define a semi-direct product, it will be helpful to know
+what an automorphism is. An automorphism is an isomorphism from a group
+to itself. The identity automorphism sends every element back to itself,
+and a non-identity automorphism basically relabels elements but
+crucially maintains the structure of the group (so the identity element
+is always sent to itself). If we have two groups $H$ and $N$, and a
+homomorphism $\phi:H\xrightarrow{}Aut(N)$, we can define
+$(N \rtimes H, \circ)$ to be the set of pairs $(n,h):n\in N,h\in H$ with
+the group operation
+$(n_1,h_1)\circ(n_2,h_2)=(n_1\phi(h_1)(n_2),h_1,h_2)$. $\phi(h_1)$ is an
+automorphism of N, so it will relabel $n_2$ to be another (or the same)
+element in $N$. I was confused whether the automorphisms of $N$ was the
+same as conjugation. I would like to remember that statements like the
+one I just made are ambiguous because “conjugation" is not an action -
+“conjugation  * by *  an element is an action. Similarly, saying a group $N$
+is normal doesn’t mean anything - the property of being normal requires
+a group $G$ to be normal  * in * . Big people also get confused with these
+specifics sometimes. In the case of automorphisms of a group $N$, there
+are inner automorphisms of $N$ (which are conjugations of elements of
+$N$  * by *  elements of $N$) and outer automorphisms (conjugation of
+elements of $N$ by elements outside the subgroup $N$). For the
+homomorphism $\phi:H\xrightarrow{}Aut(N)$, I think
+$\phi \text{ sends } h\xrightarrow{}(n\xrightarrow{}hnh^{-1})$.</p>
+
+<h1 id="sylows-theorems">Sylow’s Theorems</h1>
+
+<p>Given a group with a certain number of elements, what do we know about
+the subgroups that exist within this group? Lagrange’s Theorem tells us
+the order of a subgroup divides the order of the group. Ok, but wouldn’t
+it be nice to know
+ <em><a href="#https://math.stackexchange.com/questions/4415922/why-are-sylow-theorems-and-sylow-subgroups-significant">which</a></em> 
+divisors of the group correspond to subgroups? To answer this question,
+Sylow’s Theorems are useful. If $G$ is a group with order $p^am$ where
+$p$ is prime and $p$ doesn’t divide $m$, we call a subgroup $H$ of $G$ a
+Sylow p-subgroup if $H$ has order $p^a$. For a finite group $G$ and
+prime number $p$, we can uniquely write $|G|=p^am$ where $a\geq0$,
+$m\geq1$ and $p$ does not divide $m$. Sylow’s First Theorem tells us
+that there is a Sylow p-subgroup of $G$. Sylow’s Second Theorem tells us
+that two Sylow p-subgroups are conjugate, so if there are multiple
+p-subgroups we can get between all of them through conjugation with
+elements in $G$. Sylow’s Third Theorem says $n_p$, the number of Sylow
+p-subgroups, is congruent to $1$ mod $p$ and $n_p$ divides $m$. I
+struggled using Sylow’s Theorems to show that a group of order $pq$
+(where $p$ and $q$ are prime) was simple. I would like to remember that
+these theorems are useful to count the number of p-subgroups in a bigger
+group, and if that number is 1 then we know the bigger group is not
+simple because that p-subgroup is normal in the bigger group. A more
+general takeaway is that Sylow’s Theorems gives us insight into what
+kind of subgroups (order $p^a$) - and how many - exist within a finite
+group.</p>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+  
+
+
+  
+  
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> Tags: </strong>
+    <span itemprop="keywords">
+    
+      
+      
+      <a href="/tags/#info" class="page__taxonomy-item" rel="tag">info</a><span class="sep">, </span>
+    
+      
+      
+      <a href="/tags/#study" class="page__taxonomy-item" rel="tag">study</a>
+    
+    </span>
+  </p>
+
+
+
+
+  
+
+
+  
+  
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> Categories: </strong>
+    <span itemprop="keywords">
+    
+      
+      
+      <a href="/categories/#math" class="page__taxonomy-item" rel="tag">math</a>
+    
+    </span>
+  </p>
+
+
+        
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time datetime="2024-12-05T00:00:00-05:00">December 5, 2024</time></p>
+
+
+      </footer>
+
+      <section class="page__share">
+  
+
+  <a href="https://twitter.com/intent/tweet?text=Group+Theory+Explainer%20http%3A%2F%2Flocalhost%3A4000%2Fmath%2F24-group-theory-explainer%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Fmath%2F24-group-theory-explainer%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2Fmath%2F24-group-theory-explainer%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+
+      
+  <nav class="pagination">
+    
+      <a href="/recommendations/japanese-tech-tips/" class="pagination--pager" title="Tech Tips For Learning Japanese
+">Previous</a>
+    
+    
+      <a href="/ml/data-vis-ml/" class="pagination--pager" title="Visualizing ML Algorithms
+">Next</a>
+    
+  </nav>
+
+    </div>
+
+    
+  </article>
+
+  
+  
+    <div class="page__related">
+      <h4 class="page__related-title">You May Also Enjoy</h4>
+      <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/blog/academics-and-athletics/" rel="permalink">Academics and Athletics
+</a>
+      
+    </h2>
+<!--
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+  3 minute read
+
+</p>
+    
+-->
+    
+      <p class="page__meta"><i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i> September 07 2025</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">Time and time again throughout my college career, I’ve thought to myself
+
+  “Why am I out here rowing?? I’m falling behind where I could be if I was studying...</p>
+  </article>
+</div>
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/blog/ecbc-inventing-tie/" rel="permalink">Did Exeter College Boat Club Invent the Tie?
+</a>
+      
+    </h2>
+<!--
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+  1 minute read
+
+</p>
+    
+-->
+    
+      <p class="page__meta"><i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i> August 24 2025</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">At the Tuft’s college boathouse, I spotted a book - “Rowing Blazers” by Jack Carlson. Naturally, having spent the past year rowing for Exeter College Boat Cl...</p>
+  </article>
+</div>
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/tech/uploading-svg-to-google-slides/" rel="permalink">Uploading SVGs to google slides
+</a>
+      
+    </h2>
+<!--
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+  1 minute read
+
+</p>
+    
+-->
+    
+      <p class="page__meta"><i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i> August 03 2025</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">I’m working with a friend, making a poster in google slides. We have a bar chart to add to the poster, so naturally we download it as an SVG (scalable vector...</p>
+  </article>
+</div>
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/blog/saying-thank-you/" rel="permalink">Saying thank you
+</a>
+      
+    </h2>
+<!--
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+  2 minute read
+
+</p>
+    
+-->
+    
+      <p class="page__meta"><i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i> July 27 2025</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">When people from different cultures interact, misunderstanding may occur. I think one cause of this arises from the increased difficulty of empathizing with ...</p>
+  </article>
+</div>
+        
+      </div>
+    </div>
+  
+  
+</div>
+
+  </div>
+
+  
+  <div class="search-content">
+    <div class="search-content__inner-wrap"><form class="search-content__form" onkeydown="return event.key != 'Enter';">
+    <label class="sr-only" for="search">
+      Enter your search term...
+    </label>
+    <input type="search" id="search" class="search-input" tabindex="-1" placeholder="Enter your search term..." />
+  </form>
+  <div id="results" class="results"></div></div>
+
+  </div>
+  
+
+  <div class="page__footer">
+    <footer>
+      <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+      <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+
+    
+      
+        
+          <li><a href="https://github.com/ssocolow" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
+        
+      
+        
+          <li><a href="https://www.linkedin.com/in/simon-socolow/" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i> LinkedIn</a></li>
+        
+      
+    
+
+    <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2026 Simon Socolow. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+    </footer>
+  </div>
+
+  
+  <script src="/assets/js/main.min.js"></script>
+  <script src="https://kit.fontawesome.com/4eee35f757.js"></script>
+
+
+
+
+<script src="/assets/js/lunr/lunr.min.js"></script>
+<script src="/assets/js/lunr/lunr-store.js"></script>
+<script src="/assets/js/lunr/lunr-en.js"></script>
+
+<!-- <script async src="https://www.googletagmanager.com/gtag/js?id=UA-154432000-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-154432000-1');
+</script> -->
+
+
+
+
+
+</body>
+
+</html>

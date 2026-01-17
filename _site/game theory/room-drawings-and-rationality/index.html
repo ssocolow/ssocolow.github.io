@@ -1,0 +1,555 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.19.3 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang=" en" class="no-js">
+
+<head>
+  <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>Room Drawings and Rationality - Simon Socolow</title>
+<meta name="description" content="This is a story about a clever protocol, an unlikely implementation, and an ironic ending.">
+
+
+  <meta name="author" content="Simon Socolow">
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="Simon Socolow">
+<meta property="og:title" content="Room Drawings and Rationality">
+<meta property="og:url" content="http://localhost:4000/game%20theory/room-drawings-and-rationality/">
+
+
+  <meta property="og:description" content="This is a story about a clever protocol, an unlikely implementation, and an ironic ending.">
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2025-07-20T00:00:00-04:00">
+
+
+
+
+
+
+<link rel="canonical" href="http://localhost:4000/game%20theory/room-drawings-and-rationality/">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": null,
+      "url": "http://localhost:4000/"
+    
+  }
+</script>
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+<link href="/feed.xml"
+  type="application/atom+xml" rel="alternate" title="Simon Socolow Feed">
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css" id="theme_source">
+
+<link rel="stylesheet alternate" href="/assets/css/theme2.css" id="theme_source_2">
+<script>
+  let theme = sessionStorage.getItem('theme');
+  if (theme === "dark") {
+    sessionStorage.setItem('theme', 'dark');
+    node1 = document.getElementById('theme_source');
+    node2 = document.getElementById('theme_source_2');
+    node1.setAttribute('rel', 'stylesheet alternate');
+    node2.setAttribute('rel', 'stylesheet');
+  }
+  else {
+    sessionStorage.setItem('theme', 'light');
+  }
+</script>
+
+<!--[if IE]>
+  <style>
+    /* old IE unsupported flexbox fixes */
+    .greedy-nav .site-title {
+      padding-right: 3em;
+    }
+    .greedy-nav button {
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 100%;
+    }
+  </style>
+<![endif]-->
+
+
+  <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+  
+</head>
+
+<body
+  class="layout--single">
+  <nav class="skip-links">
+  <h2 class="screen-reader-text">Skip links</h2>
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+  <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+
+  
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+        <a class="site-title" href="/">
+          Simon Socolow
+          <span class="site-subtitle"></span>
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+            <a href="/posts/" >Posts</a>
+          </li><li class="masthead__menu-item">
+            <a href="/resume/" >Resume</a>
+          </li><li class="masthead__menu-item">
+            <a href="/categories/" >Categories</a>
+          </li><li class="masthead__menu-item">
+            <a href="/tags/" >Tags</a>
+          </li></ul>
+        
+        <i class="fas fa-fw fa-adjust" aria-hidden="true"
+          onclick="node1=document.getElementById('theme_source');node2=document.getElementById('theme_source_2');if(node1.getAttribute('rel')=='stylesheet'){node1.setAttribute('rel', 'stylesheet alternate'); node2.setAttribute('rel', 'stylesheet');sessionStorage.setItem('theme', 'dark');}else{node2.setAttribute('rel', 'stylesheet alternate'); node1.setAttribute('rel', 'stylesheet');sessionStorage.setItem('theme', 'light');} return false;"></i>
+        
+        
+        <button class="search__toggle" type="button">
+          <span class="visually-hidden">Toggle search</span>
+          <svg class="icon" width="16" height="16" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15.99 16">
+            <path
+              d="M15.5,13.12L13.19,10.8a1.69,1.69,0,0,0-1.28-.55l-0.06-.06A6.5,6.5,0,0,0,5.77,0,6.5,6.5,0,0,0,2.46,11.59a6.47,6.47,0,0,0,7.74.26l0.05,0.05a1.65,1.65,0,0,0,.5,1.24l2.38,2.38A1.68,1.68,0,0,0,15.5,13.12ZM6.4,2A4.41,4.41,0,1,1,2,6.4,4.43,4.43,0,0,1,6.4,2Z"
+              transform="translate(-.01)"></path>
+          </svg>
+        </button>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+  <div class="initial-content">
+    
+
+
+
+<div id="main" role="main">
+  
+
+
+  <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="Room Drawings and Rationality">
+    <meta itemprop="description" content="This is a story about a clever protocol, an unlikely implementation, and an ironic ending.">
+    <meta itemprop="datePublished" content="2025-07-20T00:00:00-04:00">
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title" itemprop="headline">Room Drawings and Rationality
+</h1>
+          
+            <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+  7 minute read
+
+</p>
+          
+        </header>
+      
+
+      <section class="page__content" itemprop="text">
+        
+        <p>This is a story about a clever protocol, an unlikely implementation, and an ironic ending.</p>
+
+<p>I’m living in a house with eight friends next year. There are nine rooms total, so everyone gets a single. We had to figure out who gets what room. Two of my friends had done all the administrative work with the landlord, so we let them get first pick. That left seven of us. We each ranked our room preferences, (e.g. Room #8 most preferred, Room #4 2nd most preferred, …) and put them into a spreadsheet. I was taking computational game theory at the time with Tomasz Wąs, my tutor, and so brought the issue to him. How do we maximize everyone’s preferences and assign everyone to a room? Some rooms (like Room #8) were ranked first by multiple people, and some rooms (like Room #9) were at the bottom of most people’s rankings. But someone was going to get Room #9. What is the optimal way to construct a fair assignment of people to rooms based on their preferences?</p>
+
+<p>Tomasz’s research focus is computational social choice and on what voting / distribution algorithms satisfy certain properties so he knew our options and showed me this website <a href="http://www.matchu.ai/">matchu.ai</a>. This is a mechanism design problem. We could go with <a href="http://www.matchu.ai/rsd">Random Serial Dictatorship (RSD)</a>, where we randomly select a person, they are assigned to their highest ranked room, then we remove that room from everyone else’s lists, then choose the next person. This algorithm has a fairness property (in that it treats everyone as equals), an efficiency property (no subgroups of people would be willing to swap rooms ex post), and truthfulness (no one could benefit from misreporting their rankings). Our other option was <a href="http://www.matchu.ai/psr">Probabilistic Serial Rule (PSR)</a>. PSR is a little more complicated. Borrowing from the matchu website:</p>
+
+<blockquote>
+  <p>It works as follows: suppose items are different types of pizzas. Each agent starts “eating” her top choice pizza at the same rate as every other agent. Once a pizza is consumed, agents move to their next preferred pizza; until all pizzas are eaten.</p>
+</blockquote>
+
+<p>Then these probabilities can be broken down into a weighted sum of permutation matricies (with ones and zeros that assign people to rooms) and one of these can be drawn randomly but with respect to its weight. Ask your favorite LLM if you want more info.</p>
+
+<p>PSR has advantages and disadvantages compared with RSD.</p>
+<ul>
+  <li>PSR is ex ante <strong>envy-free</strong>. In PSR, the lottery you recieve (the distribution over what room you will get) is guarenteed to be your optimal lottery (you don’t envy (like more than your own) anyone else’s lottery). In RSD, you may envy the lottery someone else has (this is a subtle point but RSD remains strategy proof because if you replicate the other person’s rankings that may backfire on your lottery’s expected utility).</li>
+  <li>PSR
+    <blockquote>
+      <p>guarantees the prescribed probabilistic matching (lottery) is efficient, meaning that no other lottery exists that can strictly improve the outcome for some participants without making other participants worse off.
+So in PSR the lottery <em>itself</em> is Pareto efficient, whereas in RSD the lottery’s outcome is Pareto efficient.</p>
+    </blockquote>
+  </li>
+  <li>RSD, however, is <strong>strategy-proof</strong>, meaning agents have no incentive to lie about their preferences. In some scenarios under PSR, agents can improve their expected utility by reporting a preference ranking that is not their true preference ranking.</li>
+  <li>PSR is difficult to explain (not a technical reason against it but certainly an implementational one).</li>
+</ul>
+
+<p>Ok, back to the story. In the group chat, my friend said “let’s just choose rooms randomly”. Vehemently opposed to this, as we could do a lot better than random, I disagreed and said “why don’t we try to maximize everyone’s preferences jointly?”. However, this was my first mistake. Had I been more rational, many messages and misunderstandings could have been avoided. After arguments and a poll, I got the group to mark down their room preference rankings in a table in Google Docs. Discussing with Tomasz, we decided to go with Random Serial Dictatorship (where a random order is decided and people choose rooms in that order) because 1. RSD is easy to explain and easy to understand why it’s fair (the most important reason) and 2. it is strategy-proof (not that important but I got a bit carried away with making our mechanism as anti-adversarial as possible). I then proposed RSD to the group.</p>
+
+<p>It turned out that my friend’s initial suggested mechanism (“let’s just choose rooms randomly”) was actually about deciding an order randomly (so exactly RSD)! Much argument was involved because I didn’t understand that what he was proposing was exactly what I was proposing. The blame for that lies on both of us (although probably a bit more on me). He should’ve been clearer about what he actually meant. I should have been clear-headed enough to recognize that very few people would actually propose to assign rooms to people <em>at random</em> and that drawing a pick order was a pretty common thing so this was what he actually meant when he said “choosing rooms randomly”.</p>
+
+<p>At this point, we had conquered our misunderstanding and were ready to draw an order for rooms. This is when my interest in cryptography and mechanism design was piqued by a challenge. My friends and I were spread across the world - if someone randomly generated pick orders, how could we trust them to not fudge the results in their favor? I wanted to make the system <strong>uncheatable</strong>. I created this protocol:</p>
+<ol>
+  <li>Number each participant (assuming &lt;= 10 participants)</li>
+  <li>Establish a date/time in the future to run the protocol</li>
+  <li>Extract the top headline of the New York Times website</li>
+  <li>Use <a href="https://emn178.github.io/online-tools/sha3_512.html">SHA3-512</a> to get a hash from the headline</li>
+  <li>Go through the hash from the left and each participant number encountered adds them next in the draw order (e.g. given 7b8f723, 7 chooses then 8 then 2 (7 has already chosen)).</li>
+  <li>In the <em>very</em> unlikely event that the hash doesn’t contain enough of these distinct digits to make a full draw order, take the hash of the hash and continue with that.</li>
+</ol>
+
+<p>Therefore, everyone could be very certain that none of us (unless they could control the NYT headline) was fudging the draw because everyone could verify for themselves the protocol result.</p>
+
+<p>Explaining the rationale for this to the group, I justified it as a fun experiment and also that it eliminates any possible suspicion about the person doing the draw. When someone said “why don’t we just all hop on a zoom where someone uses a random spinner website” I replied with “they could have edited the website to favor themselves first”. Their response was that only I would be capable of doing that.</p>
+
+<p>We hopped on a call and at this point in the debate I had resigned to using the spinner because I really didn’t think anyone was trying to cheat. It was clear my protocol was seen as unnecessary by some of the group (which in fairness it totally was). But then, like a gift from the gods, one of the leaders of our group said “why don’t we try Simon’s thing? And then nobody argued against that so I got my chance.</p>
+
+<p>I used my protocol, generated the hash, looked through the hash and began to call out the pick order! This is when my second mistake struck. I was thinking to myself “I am calling out the room order, it would look bad if I’m too early, let’s hope I’m not too early, let’s hope I’m not too early”, making super duper super sure that everyone else thought this protocol was fair. I had veered off the course of rationality and was about to pay the price. Unconciously (I believe) I skipped over my own number the first time it appeared in the readout. I was also rushing as I read out the numbers (bad idea). It is hard to keep track of where you are in a hash. Then I finished (correctly noting the <em>second</em> time my number appeared), double checked, and realized my mistake. My <em>third</em> mistake was not saying anything there and in the moment - ‘Hey actually I messed up and I’m in front of you in the order’. I didn’t want to hurt my pride, to reveal that I made a mistake implementing my algorithm, when I had argued and pushed so hard for us to use it.</p>
+
+<p>Putting on my behavioral pysch hat, I think I primed myself to not see my own number when reading the hash. I shot myself in the foot. Next year, my room will be worse than if I followed my algorithm properly, with a clear head, and without hurried biased thoughts.</p>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+  
+
+
+  
+  
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> Tags: </strong>
+    <span itemprop="keywords">
+    
+      
+      
+      <a href="/tags/#rationality" class="page__taxonomy-item" rel="tag">rationality</a>
+    
+    </span>
+  </p>
+
+
+
+
+  
+
+
+  
+  
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> Categories: </strong>
+    <span itemprop="keywords">
+    
+      
+      
+      <a href="/categories/#game-theory" class="page__taxonomy-item" rel="tag">game theory</a>
+    
+    </span>
+  </p>
+
+
+        
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time datetime="2025-07-20T00:00:00-04:00">July 20, 2025</time></p>
+
+
+      </footer>
+
+      <section class="page__share">
+  
+
+  <a href="https://twitter.com/intent/tweet?text=Room+Drawings+and+Rationality%20http%3A%2F%2Flocalhost%3A4000%2Fgame%2520theory%2Froom-drawings-and-rationality%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Fgame%2520theory%2Froom-drawings-and-rationality%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2Fgame%2520theory%2Froom-drawings-and-rationality%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+
+      
+  <nav class="pagination">
+    
+      <a href="/poetry/blades-poetry/" class="pagination--pager" title="Blades haiku
+">Previous</a>
+    
+    
+      <a href="/blog/saying-thank-you/" class="pagination--pager" title="Saying thank you
+">Next</a>
+    
+  </nav>
+
+    </div>
+
+    
+  </article>
+
+  
+  
+    <div class="page__related">
+      <h4 class="page__related-title">You May Also Enjoy</h4>
+      <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/blog/academics-and-athletics/" rel="permalink">Academics and Athletics
+</a>
+      
+    </h2>
+<!--
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+  3 minute read
+
+</p>
+    
+-->
+    
+      <p class="page__meta"><i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i> September 07 2025</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">Time and time again throughout my college career, I’ve thought to myself
+
+  “Why am I out here rowing?? I’m falling behind where I could be if I was studying...</p>
+  </article>
+</div>
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/blog/ecbc-inventing-tie/" rel="permalink">Did Exeter College Boat Club Invent the Tie?
+</a>
+      
+    </h2>
+<!--
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+  1 minute read
+
+</p>
+    
+-->
+    
+      <p class="page__meta"><i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i> August 24 2025</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">At the Tuft’s college boathouse, I spotted a book - “Rowing Blazers” by Jack Carlson. Naturally, having spent the past year rowing for Exeter College Boat Cl...</p>
+  </article>
+</div>
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/tech/uploading-svg-to-google-slides/" rel="permalink">Uploading SVGs to google slides
+</a>
+      
+    </h2>
+<!--
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+  1 minute read
+
+</p>
+    
+-->
+    
+      <p class="page__meta"><i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i> August 03 2025</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">I’m working with a friend, making a poster in google slides. We have a bar chart to add to the poster, so naturally we download it as an SVG (scalable vector...</p>
+  </article>
+</div>
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/blog/saying-thank-you/" rel="permalink">Saying thank you
+</a>
+      
+    </h2>
+<!--
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+  2 minute read
+
+</p>
+    
+-->
+    
+      <p class="page__meta"><i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i> July 27 2025</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">When people from different cultures interact, misunderstanding may occur. I think one cause of this arises from the increased difficulty of empathizing with ...</p>
+  </article>
+</div>
+        
+      </div>
+    </div>
+  
+  
+</div>
+
+  </div>
+
+  
+  <div class="search-content">
+    <div class="search-content__inner-wrap"><form class="search-content__form" onkeydown="return event.key != 'Enter';">
+    <label class="sr-only" for="search">
+      Enter your search term...
+    </label>
+    <input type="search" id="search" class="search-input" tabindex="-1" placeholder="Enter your search term..." />
+  </form>
+  <div id="results" class="results"></div></div>
+
+  </div>
+  
+
+  <div class="page__footer">
+    <footer>
+      <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+      <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+
+    
+      
+        
+          <li><a href="https://github.com/ssocolow" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
+        
+      
+        
+          <li><a href="https://www.linkedin.com/in/simon-socolow/" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i> LinkedIn</a></li>
+        
+      
+    
+
+    <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2026 Simon Socolow. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+    </footer>
+  </div>
+
+  
+  <script src="/assets/js/main.min.js"></script>
+  <script src="https://kit.fontawesome.com/4eee35f757.js"></script>
+
+
+
+
+<script src="/assets/js/lunr/lunr.min.js"></script>
+<script src="/assets/js/lunr/lunr-store.js"></script>
+<script src="/assets/js/lunr/lunr-en.js"></script>
+
+<!-- <script async src="https://www.googletagmanager.com/gtag/js?id=UA-154432000-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-154432000-1');
+</script> -->
+
+
+
+
+
+</body>
+
+</html>

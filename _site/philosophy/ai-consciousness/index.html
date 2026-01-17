@@ -1,0 +1,556 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.19.3 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang=" en" class="no-js">
+
+<head>
+  <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>AI Consciousness - Simon Socolow</title>
+<meta name="description" content="This essay is the sixth essay of my Ethics of AI philosophy tutorial (under the tutelage of Benjamin Lang). In the essay, I attempt to answer two questions: (1) Could AI be conscious? and (2) If AI can be consious, how can we build a conscious AI system / reliably test for consiousness? During the tutorial, I found out that Eric Schwitzgebel, the author of the main articles I draw from, is Ben’s friend! And during reading, I learned that viceroy butterflies actually do taste bad to birds, so they aren’t Batesian mimics - now Ben is sending that to Eric. But with regards to content, I actually think that this essay is one of my best philosophy essays because I approached the topic in a logical way and anticipated and responded to counterarguments. I think I am a naturalist (everything is in physical reality - nothing is supernatural) and a functionalist (what makes something a mental state only depends on the larger system it is in). One critique from Ben that I like is from my use of the word “important” in “an important part of conscious communication” - is it a necessary condition, a sufficient condition, or just a trait which commonly co-occurs? I think I should have also made it clear that the second part of the essay - Evaluation for Evolution - is my attempt at a practical roadmap for creating machine consciousness.">
+
+
+  <meta name="author" content="Simon Socolow">
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="Simon Socolow">
+<meta property="og:title" content="AI Consciousness">
+<meta property="og:url" content="http://localhost:4000/philosophy/ai-consciousness/">
+
+
+  <meta property="og:description" content="This essay is the sixth essay of my Ethics of AI philosophy tutorial (under the tutelage of Benjamin Lang). In the essay, I attempt to answer two questions: (1) Could AI be conscious? and (2) If AI can be consious, how can we build a conscious AI system / reliably test for consiousness? During the tutorial, I found out that Eric Schwitzgebel, the author of the main articles I draw from, is Ben’s friend! And during reading, I learned that viceroy butterflies actually do taste bad to birds, so they aren’t Batesian mimics - now Ben is sending that to Eric. But with regards to content, I actually think that this essay is one of my best philosophy essays because I approached the topic in a logical way and anticipated and responded to counterarguments. I think I am a naturalist (everything is in physical reality - nothing is supernatural) and a functionalist (what makes something a mental state only depends on the larger system it is in). One critique from Ben that I like is from my use of the word “important” in “an important part of conscious communication” - is it a necessary condition, a sufficient condition, or just a trait which commonly co-occurs? I think I should have also made it clear that the second part of the essay - Evaluation for Evolution - is my attempt at a practical roadmap for creating machine consciousness.">
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2025-06-07T00:00:00-04:00">
+
+
+
+
+
+
+<link rel="canonical" href="http://localhost:4000/philosophy/ai-consciousness/">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": null,
+      "url": "http://localhost:4000/"
+    
+  }
+</script>
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+<link href="/feed.xml"
+  type="application/atom+xml" rel="alternate" title="Simon Socolow Feed">
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css" id="theme_source">
+
+<link rel="stylesheet alternate" href="/assets/css/theme2.css" id="theme_source_2">
+<script>
+  let theme = sessionStorage.getItem('theme');
+  if (theme === "dark") {
+    sessionStorage.setItem('theme', 'dark');
+    node1 = document.getElementById('theme_source');
+    node2 = document.getElementById('theme_source_2');
+    node1.setAttribute('rel', 'stylesheet alternate');
+    node2.setAttribute('rel', 'stylesheet');
+  }
+  else {
+    sessionStorage.setItem('theme', 'light');
+  }
+</script>
+
+<!--[if IE]>
+  <style>
+    /* old IE unsupported flexbox fixes */
+    .greedy-nav .site-title {
+      padding-right: 3em;
+    }
+    .greedy-nav button {
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 100%;
+    }
+  </style>
+<![endif]-->
+
+
+  <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+  
+</head>
+
+<body
+  class="layout--single">
+  <nav class="skip-links">
+  <h2 class="screen-reader-text">Skip links</h2>
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+  <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+
+  
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+        <a class="site-title" href="/">
+          Simon Socolow
+          <span class="site-subtitle"></span>
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+            <a href="/posts/" >Posts</a>
+          </li><li class="masthead__menu-item">
+            <a href="/resume/" >Resume</a>
+          </li><li class="masthead__menu-item">
+            <a href="/categories/" >Categories</a>
+          </li><li class="masthead__menu-item">
+            <a href="/tags/" >Tags</a>
+          </li></ul>
+        
+        <i class="fas fa-fw fa-adjust" aria-hidden="true"
+          onclick="node1=document.getElementById('theme_source');node2=document.getElementById('theme_source_2');if(node1.getAttribute('rel')=='stylesheet'){node1.setAttribute('rel', 'stylesheet alternate'); node2.setAttribute('rel', 'stylesheet');sessionStorage.setItem('theme', 'dark');}else{node2.setAttribute('rel', 'stylesheet alternate'); node1.setAttribute('rel', 'stylesheet');sessionStorage.setItem('theme', 'light');} return false;"></i>
+        
+        
+        <button class="search__toggle" type="button">
+          <span class="visually-hidden">Toggle search</span>
+          <svg class="icon" width="16" height="16" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15.99 16">
+            <path
+              d="M15.5,13.12L13.19,10.8a1.69,1.69,0,0,0-1.28-.55l-0.06-.06A6.5,6.5,0,0,0,5.77,0,6.5,6.5,0,0,0,2.46,11.59a6.47,6.47,0,0,0,7.74.26l0.05,0.05a1.65,1.65,0,0,0,.5,1.24l2.38,2.38A1.68,1.68,0,0,0,15.5,13.12ZM6.4,2A4.41,4.41,0,1,1,2,6.4,4.43,4.43,0,0,1,6.4,2Z"
+              transform="translate(-.01)"></path>
+          </svg>
+        </button>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+  <div class="initial-content">
+    
+
+
+
+<div id="main" role="main">
+  
+
+
+  <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="AI Consciousness">
+    <meta itemprop="description" content="  This essay is the sixth essay of my Ethics of AI philosophy tutorial (under the tutelage of Benjamin Lang). In the essay, I attempt to answer two questions: (1) Could AI be conscious? and (2) If AI can be consious, how can we build a conscious AI system / reliably test for consiousness? During the tutorial, I found out that Eric Schwitzgebel, the author of the main articles I draw from, is Ben’s friend! And during reading, I learned that viceroy butterflies actually do taste bad to birds, so they aren’t Batesian mimics - now Ben is sending that to Eric. But with regards to content, I actually think that this essay is one of my best philosophy essays because I approached the topic in a logical way and anticipated and responded to counterarguments. I think I am a naturalist (everything is in physical reality - nothing is supernatural) and a functionalist (what makes something a mental state only depends on the larger system it is in). One critique from Ben that I like is from my use of the word “important” in “an important part of conscious communication” - is it a necessary condition, a sufficient condition, or just a trait which commonly co-occurs? I think I should have also made it clear that the second part of the essay - Evaluation for Evolution - is my attempt at a practical roadmap for creating machine consciousness.">
+    <meta itemprop="datePublished" content="2025-06-07T00:00:00-04:00">
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title" itemprop="headline">AI Consciousness
+</h1>
+          
+            <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+  12 minute read
+
+</p>
+          
+        </header>
+      
+
+      <section class="page__content" itemprop="text">
+        
+        <blockquote>
+  <p>This essay is the sixth essay of my Ethics of AI philosophy tutorial (under the tutelage of Benjamin Lang). In the essay, I attempt to answer two questions: (1) Could AI be conscious? and (2) If AI can be consious, how can we build a conscious AI system / reliably test for consiousness? During the tutorial, I found out that Eric Schwitzgebel, the author of the main articles I draw from, is Ben’s friend! And during reading, I learned that viceroy butterflies actually do taste bad to birds, so they aren’t Batesian mimics - now Ben is sending that to Eric. But with regards to content, I actually think that this essay is one of my best philosophy essays because I approached the topic in a logical way and anticipated and responded to counterarguments. I think I am a naturalist (everything is in physical reality - nothing is supernatural) and a functionalist (what makes something a mental state only depends on the larger system it is in). One critique from Ben that I like is from my use of the word “important” in “an important part of conscious communication” - is it a necessary condition, a sufficient condition, or just a trait which commonly co-occurs? I think I should have also made it clear that the second part of the essay - Evaluation for Evolution - is my attempt at a practical roadmap for creating machine consciousness.</p>
+</blockquote>
+
+<p>The prospect of AI consciousness has implications for the ethics of our design and use of AI systems, and for the future of life in the universe. Therefore, determining if AI systems can be conscious is of high importance. And, if we believe they can be, how to make them conscious is the logical next question. This paper argues that (1) consciousness is an emergent property obtainable by AI and (2) we can make conscious AIs by creating better evaluation metrics of consciousness. Improving evaluation metrics will allow us to overcome the mimicry argument against robot consciousness through a process similar to evolution.</p>
+
+<h2 id="consciousness-is-emergent">Consciousness is Emergent</h2>
+<p>Consciousness is familiar and puzzling. There is no fully agreed-upon definition as to what it is, but there are many theories for what it means to say something is consciousness. It could mean that the entity can sense and respond to its environment, or that it is self-conscious - aware that it is aware, or that there is some subjective “something that it is like” to be that entity (Van Gulick 2025). Or, it could mean that an entity is “behaviorally sophisticated” - defined as “capable of complex goal-seeking, complex communication, and complex cooperation” (Schwitzgebel 2024, 6). This section will argue that consciousness is an emergent property and can therefore be attributed to AI systems - machines that run on non-carbon substrates.</p>
+
+<p>Can machines think? The famous question posed by Turing runs somewhat parallel to the concerns of this paper. One of the contrary views to his proposed imitation game is “The Argument from Consciousness”. During his rebuttal, Turing notes that for consciousness there is “something of a paradox connected with any attempt to localise it” (Turing 1950). In other words, consciousness appears to be an emergent property - just like life. Living things are physically composed of non-living things - DNA, RNA, proteins, and lipids that are not themselves alive. My brain is made up of billions of interconnected neurons, and few people would say that each individual neuron is conscious by itself. Because emergence requires multiple systems working together to produce a behavior, consciousness can therefore only be a property of some system over a specified time interval. This makes intuitive sense - there are periods of time where my brain is not conscious and frozen brain states or abstract (not running) formal programs do not appear to be conscious. With the emergence property of consciousness established, AI consciousness is much more plausible.</p>
+
+<p>Imagine an artificial neuron, an a-neuron, that functions similarly to a normal human neuron except that it isn’t carbon based. It has artificial dendrites and an artificial axon, and action potentials that flow from each a-neuron like they do in normal neurons. Following a process similar to Schneider’s Chip Test, let’s replace one neuron in my brain - that only interfaces with other neurons - with an a-neuron with the same static action potential functions (but of course doesn’t respond to the brain’s chemical changes like a normal neuron would) (Schneider 2020, 451). Now, keep replacing neurons that are only connected with other neurons in my brain with a-neurons until all have been replaced. After this process is done, only the biological neurons interfacing with other types of cells in my body to receive signals and issue commands are left. Assuming a-neurons can perfectly represent normal neurons’ changes in action potential and firing profiles, immediately after this surgical operation occurs, my brain functions exactly as it did post-surgery. If my brain was conscious pre-operation it seems that in the moments following this operation my brain will continue to have the emergent property of consciousness because it will be functioning the same. This relies on the property of consciousness to be emergent, and that emergent phenomena rely solely on the functioning of the smaller parts that interact to create the wider system. If the smaller parts of a system interact exactly the same as they do in some other system, the emergent phenomena of the first system can be said to be occurring in the second. Therefore, a system of mostly a-neurons (an AI) can be conscious.</p>
+
+<p>One obvious objection to this Chip-Swap operation’s conclusions is that the brain filled with mostly a-neurons will not function exactly the same as it did pre-operation because of the biochemical interactions that normally occur in a brain (neurotransmitters like dopamine and neuroplastic changes in a brain’s local structures). There are two ways to respond to this objection: (1) to argue that an AI system can also create these effects and (2) to argue that these effects are not important to consciousness. Each will be addressed.</p>
+
+<p>First, consider the Chip-Swap+ operation (an improved version) where not only a-neurons replace regular neurons in my brain, but there is also a powerful machine that does the work of simulating the influence of neurotransmitters and neuroplasticity on the a-neurons in my new brain. Granted, this machine is a stretch of the imagination past the original thought experiment, but if we are able to do the original Chip-Swap experiment successfully it is plausible that we could do these frequent modifications as well. Therefore, an AI system could completely recreate the behavior of the brain and be understood as conscious when functioning.</p>
+
+<p>Second, let us argue that neurotransmitters and neuroplasticity are not of crucial importance for consciousness - only electrical potentials are. Consciousness seems to be a property that can be assigned to a system on relatively short time intervals, as in an entity can have the property of consciousness for an interval of a few hours. This appears to show that neuroplasticity is not relevant to consciousness as significant structural changes in neurons and new cell growth take significantly more time to occur. Neurotransmitters function to excite or inhibit neurons (making them more or less likely to fire). This activity does deeply affect the functioning of the brain, however it is useful only as far as modulating the flow of electrical signals. The signals themselves are of much more importance to the emergent behavior of consciousness. The argument for the possible existence of AI consciousness has been made - the next step is how to get there.</p>
+
+<h2 id="evaluation-for-evolution">Evaluation for Evolution</h2>
+<p>How can we develop conscious AI systems? The definition of consciousness this section focuses on is behavioral sophistication - complex goal-seeking, communication, and cooperation. Modern LLMs are designed to mimic humans, so if we are to follow the sensible mimicry argument against robot consciousness, we should be by default suspicious to assign consciousness to robots based on initial impressions of behavioral sophistication (Schwitzgebel 2024, 27). However, by the Copernican argument for alien consciousness, we should assume by default that behavioral sophistication implies consciousness for alien forms of life (Ibid., 2). This “violation” of the parity principle (the idea that we should apply the same types of behavioral or cognitive tests to robots as we would aliens to determine consciousness) is justified by prior information about the provenance of each type of system. In sketch, the argument roughly follows the idea that over an evolutionary time span, actually having a certain feature F (like long-term memory or behavioral sophistication or tasting nasty) is much more efficient than mimicking the superficial features associated with F (like the wing patterns of a monarch butterfly). However, when we have reason to believe a robot is designed to mimic human consciousness, inference to the best explanation suggests that the robot has the superficial features associated with human consciousness but is unlikely to have consciousness itself (Ibid., 5). For a likely non-conscious but conscious-mimicking system like today’s LLMs, could there be a way to transform them into something that we have confidence is conscious?</p>
+
+<p>This section proposes that there does exist such a way, one which follows Schwitzgebel’s statement that - assuming functionalism (where a system that exactly replicates the functional states of a conscious brain is conscious) - “In the limit, the mimic could only ‘fool’ a god-like receiver by actually acquiring feature F” (Ibid., 30). In short, we must become gods of distinguishing consciousness from its superficial features. This method would rely on the increasing capability of an intended dupe (us) to distinguish between consciousness and an AI attempt at consciousness. In the current deep learning paradigm, such a capability to distinguish the performance of different systems is called an evaluation metric. If humans score high on a consciousness evaluation but AI systems do not, there is an argument to be made that the AI system lacks consciousness and is just engaging in mimicry. However, caution must be exercised to avoid evaluations degenerating into tests for humanness because such tests would presuppose that consciousness can only be found in humans.</p>
+
+<p>Therefore, we must get better at asking the question: what does it scientifically mean to be conscious? Researchers can become forces of natural selection by creating better and better ways of measuring the behavioral differences between humans and AIs such that architectures and algorithms of AI systems are synthetically evolved to minimize those differences. In doing so, consciousness can be obtained by AIs through the evolution of structures that generate complex goal-seeking, communication, and cooperation. There are multiple avenues in which we can approach crafting better evaluations, most of which are currently being pursued.</p>
+
+<p>To better evaluate an entity’s complex goal-seeking capabilities, we can develop evaluations (evals) that measure the reasoning capabilities of AI models. One property of human goal-seeking is that we create goals from a hierarchy of fundamental desires like Maslow’s hierarchy of needs. For example, the goal to finish a project at work could come from the desire for shelter or a sense of connection amongst colleagues. AI goal-seeking could similarly involve developing sub-goals during reasoning based on a main objective like “respond to the prompt as best as possible”. Better evaluation metrics for reasoning (so the agent improves at goal-seeking) can involve methods like multi turn reinforcement learning, where a reward model scores intermediate steps. These methods can be supercharged by verifiers - objective evaluation of model outputs like “does the model’s code compile”. Another type of reasoning eval that is good at measuring the difference between humans and AIs are those similar to the ARC-AGI-2 dataset that is specifically designed to demonstrate the subtle ways in which AI models are inferior to human reasoning.</p>
+
+<p>To evaluate communication, the commonly applied post-training technique of reinforcement learning from human feedback (RLHF) seems to perform well in enabling coherent and understandable LLM outputs. However, an important part of conscious communication is one’s ability to know one doesn’t know something. Modern LLM hallucinations are clearly an obstacle that we should develop better checks and evals for so we can force AI systems to develop cognitive structures that enable closer-to-human conscious communication. It may turn out that for some forms of complex communication, temporally stable entities with long-term memories are required. In these types of interactions, humans may score much higher on good evals than the one-off chat sessions of today’s LLMs. For AI systems to reach human scores on these evals, they may be forced to develop a temporally stable presence and long term memory structure.</p>
+
+<p>To better evaluate cooperation, we need evals that measure the performance of groups. It could turn out that control of a body is just better for certain types of cooperation. If this is the case, the best way for models to get better at these evaluations would be embodiment in something like a Tesla Optimus robot. Humans cooperating are usually good at sticking to their assigned task. LLMs, however, have trouble doing so. For example, during coding tasks they edit parts of the code they shouldn’t. An evaluation that measured how closely an assigned task was followed would help us evaluate cooperation.</p>
+
+<h2 id="reconciling-with-goodharts-law">Reconciling with Goodhart’s Law</h2>
+<p>Goodhart’s Law is an adage that states: “When a measure becomes a target, it ceases to be a good measure”. Translated in terms of the argument above, it seems to say that evaluations (measures of consciousness) that become targets (used to guide optimizations) cease to be good evaluations (of consciousness). In the argument above, many measures were proposed to become targets. Does this mean that they will all cease to be good measures of consciousness?</p>
+
+<p>Individually, yes but collectively, no. As consciousness is an emergent phenomena, it cannot be described and measured precisely in the way that the property “at 25 degrees celsius” can be measured for something like water. None of the proposed evaluations were complete measures of consciousness, so every measure can be gamed in a way that score increases but apparent consciousness decreases. Optimizing each measure individually would fail. But attempting to optimize each measure jointly, and adding new evals that find where the current set fails, is a much more robust system. It avoids the pitfalls of Goodhart’s Law because the measure itself is dynamic (by the addition of new evals). This system, loosely defined, moves beyond a measure and becomes a framework to evolve AI consciousness.</p>
+
+<h2 id="references">References</h2>
+<ul>
+  <li>Schneider, Susan. 2020. “How to Catch an AI Zombie: Testing for Consciousness in Machines.” In Ethics of Artificial Intelligence, edited by S. Matthew Liao, 439–58. Oxford: Oxford University Press. https://doi.org/10.1093/oso/9780190905033.003.0016.</li>
+  <li>Schwitzgebel, Eric, and Jeremy Pober. 2024. “The Copernican Argument for Alien Consciousness; The Mimicry Argument Against Robot Consciousness.” November 12. https://arxiv.org/abs/2412.00008.</li>
+  <li>Searle, John R. 1980. “Minds, Brains, and Programs.” Behavioral and Brain Sciences 3 (3): 417–57. https://doi.org/10.1017/S0140525X00005756.</li>
+  <li>Turing, Alan M. 1950. “Computing Machinery and Intelligence.” Mind 59 (236): 433–460. https://doi.org/10.1093/mind/LIX.236.433.</li>
+  <li>Van Gulick, Robert. 2025. “Consciousness”. In The Stanford Encyclopedia of Philosophy, edited by Edward N. Zalta &amp; Uri Nodelman. https://plato.stanford.edu/archives/spr2025/entries/consciousness/</li>
+</ul>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+  
+
+
+  
+  
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> Tags: </strong>
+    <span itemprop="keywords">
+    
+      
+      
+      <a href="/tags/#essays" class="page__taxonomy-item" rel="tag">essays</a><span class="sep">, </span>
+    
+      
+      
+      <a href="/tags/#study" class="page__taxonomy-item" rel="tag">study</a>
+    
+    </span>
+  </p>
+
+
+
+
+  
+
+
+  
+  
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> Categories: </strong>
+    <span itemprop="keywords">
+    
+      
+      
+      <a href="/categories/#philosophy" class="page__taxonomy-item" rel="tag">philosophy</a>
+    
+    </span>
+  </p>
+
+
+        
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time datetime="2025-06-07T00:00:00-04:00">June 7, 2025</time></p>
+
+
+      </footer>
+
+      <section class="page__share">
+  
+
+  <a href="https://twitter.com/intent/tweet?text=AI+Consciousness%20http%3A%2F%2Flocalhost%3A4000%2Fphilosophy%2Fai-consciousness%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Fphilosophy%2Fai-consciousness%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2Fphilosophy%2Fai-consciousness%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+
+      
+  <nav class="pagination">
+    
+      <a href="/philosophy/pros-and-cons-of-relationships-with-robots/" class="pagination--pager" title="Pros and Cons of Relationships with Robots
+">Previous</a>
+    
+    
+      <a href="/poetry/blades-poetry/" class="pagination--pager" title="Blades haiku
+">Next</a>
+    
+  </nav>
+
+    </div>
+
+    
+  </article>
+
+  
+  
+    <div class="page__related">
+      <h4 class="page__related-title">You May Also Enjoy</h4>
+      <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/blog/academics-and-athletics/" rel="permalink">Academics and Athletics
+</a>
+      
+    </h2>
+<!--
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+  3 minute read
+
+</p>
+    
+-->
+    
+      <p class="page__meta"><i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i> September 07 2025</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">Time and time again throughout my college career, I’ve thought to myself
+
+  “Why am I out here rowing?? I’m falling behind where I could be if I was studying...</p>
+  </article>
+</div>
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/blog/ecbc-inventing-tie/" rel="permalink">Did Exeter College Boat Club Invent the Tie?
+</a>
+      
+    </h2>
+<!--
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+  1 minute read
+
+</p>
+    
+-->
+    
+      <p class="page__meta"><i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i> August 24 2025</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">At the Tuft’s college boathouse, I spotted a book - “Rowing Blazers” by Jack Carlson. Naturally, having spent the past year rowing for Exeter College Boat Cl...</p>
+  </article>
+</div>
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/tech/uploading-svg-to-google-slides/" rel="permalink">Uploading SVGs to google slides
+</a>
+      
+    </h2>
+<!--
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+  1 minute read
+
+</p>
+    
+-->
+    
+      <p class="page__meta"><i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i> August 03 2025</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">I’m working with a friend, making a poster in google slides. We have a bar chart to add to the poster, so naturally we download it as an SVG (scalable vector...</p>
+  </article>
+</div>
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/blog/saying-thank-you/" rel="permalink">Saying thank you
+</a>
+      
+    </h2>
+<!--
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+  2 minute read
+
+</p>
+    
+-->
+    
+      <p class="page__meta"><i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i> July 27 2025</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">When people from different cultures interact, misunderstanding may occur. I think one cause of this arises from the increased difficulty of empathizing with ...</p>
+  </article>
+</div>
+        
+      </div>
+    </div>
+  
+  
+</div>
+
+  </div>
+
+  
+  <div class="search-content">
+    <div class="search-content__inner-wrap"><form class="search-content__form" onkeydown="return event.key != 'Enter';">
+    <label class="sr-only" for="search">
+      Enter your search term...
+    </label>
+    <input type="search" id="search" class="search-input" tabindex="-1" placeholder="Enter your search term..." />
+  </form>
+  <div id="results" class="results"></div></div>
+
+  </div>
+  
+
+  <div class="page__footer">
+    <footer>
+      <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+      <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+
+    
+      
+        
+          <li><a href="https://github.com/ssocolow" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
+        
+      
+        
+          <li><a href="https://www.linkedin.com/in/simon-socolow/" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i> LinkedIn</a></li>
+        
+      
+    
+
+    <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2026 Simon Socolow. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+    </footer>
+  </div>
+
+  
+  <script src="/assets/js/main.min.js"></script>
+  <script src="https://kit.fontawesome.com/4eee35f757.js"></script>
+
+
+
+
+<script src="/assets/js/lunr/lunr.min.js"></script>
+<script src="/assets/js/lunr/lunr-store.js"></script>
+<script src="/assets/js/lunr/lunr-en.js"></script>
+
+<!-- <script async src="https://www.googletagmanager.com/gtag/js?id=UA-154432000-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-154432000-1');
+</script> -->
+
+
+
+
+
+</body>
+
+</html>
