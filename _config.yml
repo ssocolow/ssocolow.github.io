@@ -119,12 +119,11 @@ defaults:
   #     related: true
 
 # SEO related
-# analytics:
-#   provider: "google-gtag"
-#   google:
-#     tracking_id: "UA-154432000-1"
-#     anonymize_ip: false # default
-# google_site_verification: google9c27511a2a69fff6.html
+analytics:
+  provider: "google-gtag"
+  google:
+    tracking_id: "G-0KZH6EK2F4"
+    anonymize_ip: false # default
 
 category_archive:
   type: liquid
