@@ -5,6 +5,18 @@ layout: single
 ---
 
 <div class="projects-grid">
+
+<!-- Cardopt Project -->
+  <a href="https://credit-rewards-optimizer.simonsocolow78.workers.dev/" class="project-card" target="_blank" rel="noopener noreferrer">
+    <div class="project-card__image-wrapper">
+      <img src="/assets/images/cardopt.png" alt="Cardopt" class="project-card__image">
+    </div>
+    <div class="project-card__content">
+      <h3 class="project-card__title">Cardopt</h3>
+      <p class="project-card__description">App to help optimize credit card rewards.</p>
+    </div>
+  </a>
+
   <!-- Boggle bench Project -->
   <a href="https://simonsocolow.com/boggle-bench/" class="project-card" target="_blank" rel="noopener noreferrer">
     <div class="project-card__image-wrapper">

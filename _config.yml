@@ -20,7 +20,6 @@ minimal_mistakes_skin2: "dark"
 
 title: "Simon Socolow"
 subtitle: ""
-email: sms12@williams.edu
 description: >- # this means to ignore newlines until "baseurl:"
   Hey there! I'm Simon, welcome to my site!
 words_per_minute: 200
@@ -73,8 +72,6 @@ author:
   avatar: "/assets/images/headshot.jpg"
   bio: " Interested in aligning AI and empowering individuals with cryptosystems. Aspiring rationalist."
   links:
-    - label: "Email"
-      url: "mailto:sms12@williams.edu"
     - label: "GitHub"
       url: "https://github.com/ssocolow"
     - label: "LinkedIn"
@@ -107,7 +104,7 @@ defaults:
       author_profile: false
       read_time: true
       comments: true
-      share: true
+      share: false
       related: true
   # - scope:
   #     path: ""
