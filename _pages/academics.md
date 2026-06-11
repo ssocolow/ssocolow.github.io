@@ -13,3 +13,7 @@ layout: single
 ## Published
 
 - Andle, J., Soucy, N., **Socolow, S.**, & Yasaei Sekeh, S. (2022). *The Stanford Drone Dataset is More Complex than We Think: An Analysis of Key Characteristics*. arXiv preprint [arXiv:2203.11743](https://arxiv.org/abs/2203.11743).
+
+### Conferences
+
+- [New England Statistics Symposium (NESS)](https://symposium.nestat.org/)
