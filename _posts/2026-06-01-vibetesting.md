@@ -24,4 +24,6 @@ My average sleep score for nights with the purifier is 95.13, average without pu
 
 Zooming out, considering how easy AI made this experiment, I think I will vibe test more questions in the future. In the far future, I can imagine a smart home that can create and conduct randomized experiments like this one autonomously. With wearable biometric devices like smart watches and smart home environment controls, I could imagine something like the prompt "design, schedule, and execute an experiment to determine which temperature in the range 60-70 degrees Fahrenheit I sleep the best at" to actually succeed.
 
+Taken even further, this idea becomes something like autoresearch (which I'm watching with keen interest - [karpathy](https://github.com/karpathy/autoresearch), [quantum circuit optimization](https://www.ecdsa.fail/), and [glite](https://github.com/GliteTech/glite-arf)). Autoresearch on myself, with AI as the experimenter and myself as the subject and beneficiary of results.
+
 This is an awesome possible future, and one I'd love to help build.
