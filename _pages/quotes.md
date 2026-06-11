@@ -12,6 +12,7 @@ These are some of the most profound snippets of language I've heard throughout m
 - "Dream. Use your imagination. Overcome fear. Act." - Pablo Picasso
 - "Your mind is for having ideas, not holding them" - David Allen
 - "Be the change you wish to see in the world" - Ghandi
+- "Elves seldom give unguarded advice, for advice is a dangerous gift, even from the wise to the wise, and all courses may run ill." - J.R.R. Tolkien
 - Together is better
 - "The network is robust in its unstructured simplicity" - Satoshi Nakamoto
 - "and tonight the stars'll be out, and don't you know that God is Pooh Bear?" - Jack Kerouac
