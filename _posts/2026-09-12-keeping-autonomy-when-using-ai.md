@@ -9,18 +9,16 @@ tags:
 
 When I'm using coding agents like Claude code or Codex, I often experience a failure mode that I think is pretty common among humans using these tools. The failure mode manifests itself as an experience that looks somewhat like the following:
 
-```
-Me: how does this system work and why is this part not working
-AI: Great question, let me investigate.
-AI: Gigantic response with a ten-step flowchart, a response explaining the load-bearing nature of the failing lines of code, and a prosposed fix.
-Me: ok make that fix and test it
-AI: Makes the change, tests it, says it's good.
-Me: still not working, this time this other part is broken
-AI: Great catch, here is how we can fix that too.
-Me: make the change
-AI: makes the change and provides several paragraphs on how previous change didn't cover what my brilliant insight pointed out but now everything will work.
-Me: ok great looks like it's working
-```
+> **Me**: how does this system work and why is this part not working  
+> **AI**: Great question, let me investigate.  
+> **AI**: Gigantic response with a ten-step flowchart, a response explaining the load-bearing nature of the failing lines of code, and a prosposed fix.  
+> **Me**: ok make that fix and test it  
+> **AI**: Makes the change, tests it, says it's good.  
+> **Me**: still not working, this time this other part is broken  
+> **AI**: Great catch, here is how we can fix that too.  
+> **Me**: make the change  
+> **AI**: makes the change and provides several paragraphs on how previous change didn't cover what my brilliant insight pointed out but now everything will work.  
+> **Me**: ok great looks like it's working
 
 "That doesn't look like a failure" you say. I'm going to argue that it is. While the code now functions, what is left broken is my mental model of the system and the fix. The passivity of reading and occasionally prompting "continue" or "make the change" lulls me into a false sense of understanding. Learning is active - not passive.
 
@@ -30,10 +28,7 @@ For me to retain my autonomy, my ability to make informed decisions, my mental m
 
 Once I'm aware that my quest for knowledge has been derailed, I have a strategy to pull myself back. It goes something like:
 
-```
-Me: my current mental model is that X fetches the data from Y then transforms it with Z and sends it to W. The issue is that Z needs to depend on the state of W and right now it doesn't do that right because ...
-correct me.
-```
+> **Me**: my current mental model is that X fetches the data from Y then transforms it with Z and sends it to W. The issue is that Z needs to depend on the state of W and right now it doesn't do that right because ... correct me.  
 
 I pretend that a friend has just put me on the spot by asking what's going on here. I answer to the best of my ability from whatever thoughts are floating around half-digested in my head (nothing else).
 
