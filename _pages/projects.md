@@ -72,6 +72,17 @@ layout: single
     </div>
   </a>
 
+  <!-- Classification and regression model playground Project -->
+  <a href="https://simonsocolow.com/rggw/" class="project-card" target="_blank" rel="noopener noreferrer">
+    <div class="project-card__image-wrapper">
+      <img src="/assets/images/rggw.png" alt="Random group generator website" class="project-card__image">
+    </div>
+    <div class="project-card__content">
+      <h3 class="project-card__title">Random group generator</h3>
+      <p class="project-card__description">Made for my high school physics teacher for lab group formation.</p>
+    </div>
+  </a>
+
 
   <!-- You can add more cards here following the same format -->
 
