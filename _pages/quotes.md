@@ -5,8 +5,8 @@ layout: single
 ---
 These are some of the most profound snippets of language I've heard throughout my life so far:
 
-- Always curiosity, never fear
 - Don't panic - The Hitchhiker's Guide to the Galaxy
+- Always curiosity, never fear
 - "Keep on moving forward and you'll be fine" - Vitalik Buterin
 - "All models are wrong, but some are useful" - George Box
 - "Dream. Use your imagination. Overcome fear. Act." - Pablo Picasso
@@ -34,3 +34,5 @@ These are some of the most profound snippets of language I've heard throughout m
 - "You show me the man, I'll show you the crime."
 - "Mobility is life-changing" - Ben Floyd
 - "I can close off the paralysing thoughts, not by answering them on their own terms, but by realising that the choices I make today affect the kind of person I’ll be for the rest of my life." - Neel Nanda
+- "We can discover meaning in life in three different ways. (1) By creating a work or doing a deed. (2) By experiencing something or encountering someone. (3) By the attitude we take toward unavoidable suffering." - Viktor Frankl
+- "Fear brings about that which one is afraid of, and hyper-intention makes impossible what one wishes." - Viktor Frankl on the technique of paradoxical intention
