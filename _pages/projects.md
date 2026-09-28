@@ -5,6 +5,17 @@ layout: single
 ---
 
 <div class="projects-grid">
+  
+  <!-- Craftbench Project -->
+  <a href="https://craftbench.vercel.app/" class="project-card" target="_blank" rel="noopener noreferrer">
+    <div class="project-card__image-wrapper">
+      <img src="/assets/images/craftbench.png" alt="Boggle bench" class="project-card__image">
+    </div>
+    <div class="project-card__content">
+      <h3 class="project-card__title">Craftbench</h3>
+      <p class="project-card__description">See how different models build famous structures in minecraft.</p>
+    </div>
+  </a>
 
   <!-- Boggle bench Project -->
   <a href="https://simonsocolow.com/boggle-bench/" class="project-card" target="_blank" rel="noopener noreferrer">
